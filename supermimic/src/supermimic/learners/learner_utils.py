@@ -131,6 +131,7 @@ class CapturedUpdate:
         self._graph, self._identity = graph, _identity(self._state())
       elif _identity(state) != self._identity:
         raise RuntimeError("a captured tensor moved")
+      # No host sync: the replay is ordered on the current stream like any other
+      # kernel, so the host can queue the work that follows while it runs.
       self._graph.replay()
-      torch.cuda.current_stream().synchronize()
       return self._outputs
