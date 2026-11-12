@@ -146,6 +146,7 @@ class ObservationManager(ManagerBase):
         self._group_obs_dim[group_name] = group_term_dims
 
     self._obs_buffer: dict[str, torch.Tensor | dict[str, torch.Tensor]] | None = None
+    self._skipped_groups: frozenset[str] = frozenset()
 
   def __str__(self) -> str:
     msg = f"<ObservationManager> contains {len(self._group_obs_term_names)} groups.\n"
@@ -235,6 +236,15 @@ class ObservationManager(ManagerBase):
       raise ValueError(f"Term '{term_name}' not found in group '{group_name}'.")
     index = self._group_obs_term_names[group_name].index(term_name)
     return self._group_obs_term_cfgs[group_name][index]
+
+  def set_skipped_groups(self, group_names: set[str]) -> None:
+    """Leave ``group_names`` out of :meth:`compute` (neither computed nor
+    returned), for a caller that never reads them."""
+    unknown = set(group_names) - set(self._group_obs_term_names)
+    if unknown:
+      raise ValueError(f"unknown observation groups {sorted(unknown)}")
+    self._skipped_groups = frozenset(group_names)
+    self._obs_buffer = None
 
   def reset(self, env_ids: torch.Tensor | slice | None = None) -> dict[str, float]:
     # Invalidate cache since reset envs will have different observations.
@@ -326,6 +336,8 @@ class ObservationManager(ManagerBase):
 
     obs_buffer: dict[str, torch.Tensor | dict[str, torch.Tensor]] = dict()
     for group_name in self._group_obs_term_names:
+      if group_name in self._skipped_groups:
+        continue
       obs_buffer[group_name] = self.compute_group(group_name, update_history, env_ids)
     self._obs_buffer = obs_buffer
     return obs_buffer

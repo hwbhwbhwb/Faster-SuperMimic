@@ -549,6 +549,13 @@ class SuperMimicRunner(BaseRunner[SuperMimicRunnerCfg]):
         actor, self.wm_env, policy_cfg, device=self.device
       )
 
+    # Collection reads only the sim's full state and actor sensor; its critic and
+    # goal groups (the runner builds its own goals and critic input) go unused.
+    obs_manager = self.env.unwrapped.observation_manager
+    obs_manager.set_skipped_groups(
+      set(obs_manager.active_terms) - {"actor", "full_state"}
+    )
+
   def _build_sim_obs_td(
     self,
     rep_state: torch.Tensor,
