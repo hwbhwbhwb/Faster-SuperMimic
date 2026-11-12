@@ -9,6 +9,7 @@ import mujoco
 import mujoco_warp as mjwarp
 import numpy as np
 import torch
+from mjlab.utils.device_scalar import device_scalar
 
 from mjlab import actuator
 from mjlab.actuator import BuiltinActuatorGroup, FusedActuatorGroup
@@ -877,7 +878,9 @@ class Entity:
     and by commands that teleport the robot to a new pose mid-episode.
     """
     self._data.clear_state(env_ids)
-    self._cleared_joint_pos_target[slice(None) if env_ids is None else env_ids] = True
+    self._cleared_joint_pos_target[slice(None) if env_ids is None else env_ids] = (
+      device_scalar(True, self._cleared_joint_pos_target)
+    )
 
     for act in self._actuators:
       act.reset(env_ids)
@@ -1088,7 +1091,9 @@ class Entity:
       joint_ids = slice(None)
     env_ids, joint_ids = _outer_index(env_ids, joint_ids)
     self._data.joint_pos_target[env_ids, joint_ids] = position
-    self._cleared_joint_pos_target[env_ids, joint_ids] = False
+    self._cleared_joint_pos_target[env_ids, joint_ids] = device_scalar(
+      False, self._cleared_joint_pos_target
+    )
 
   def set_joint_velocity_target(
     self,

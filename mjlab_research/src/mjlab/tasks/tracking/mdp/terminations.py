@@ -89,4 +89,7 @@ def bad_motion_body_pos_z_only(
 def motion_end(env: ManagerBasedRlEnv, command_name: str) -> torch.Tensor:
   command = cast(MotionCommand, env.command_manager.get_term(command_name))
   next_time_steps = command.time_steps + 1
-  return torch.isin(next_time_steps, command.motion.motion_ends)
+  # Membership in the sorted clip ends; torch.isin syncs the host on long lists.
+  ends = command.motion.motion_ends
+  pos = torch.searchsorted(ends, next_time_steps).clamp(max=ends.numel() - 1)
+  return ends[pos] == next_time_steps

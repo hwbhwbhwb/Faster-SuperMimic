@@ -7,6 +7,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Any
 
 import torch
+from mjlab.utils.device_scalar import device_scalar
 from prettytable import PrettyTable
 
 from mjlab.managers.manager_base import ManagerBase, ManagerTermBaseCfg
@@ -114,7 +115,7 @@ class RewardManager(ManagerBase):
       extras["Episode_Reward/" + key] = (
         episodic_sum_avg / self._env.max_episode_length_s
       )
-      self._episode_sums[key][env_ids] = 0.0
+      self._episode_sums[key][env_ids] = device_scalar(0.0, self._episode_sums[key])
     for term_cfg in self._class_term_cfgs:
       term_cfg.func.reset(env_ids=env_ids)
     return extras

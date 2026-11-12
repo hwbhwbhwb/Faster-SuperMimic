@@ -10,6 +10,7 @@ from typing import TYPE_CHECKING, Literal
 
 import numpy as np
 import torch
+from mjlab.utils.device_scalar import device_tensor
 
 from mjlab.managers import CommandTerm, CommandTermCfg
 from mjlab.utils.forward_kinematics import ForwardKinematics
@@ -447,7 +448,10 @@ class MotionCommand(CommandTerm):
       assert self.cfg.sampling_mode == "adaptive"
       frames = self._adaptive_sampling(env_ids)
 
-    on_last = torch.isin(frames, self.motion.motion_ends - 1)
+    # Membership in the sorted clip-last frames; torch.isin syncs on long lists.
+    lasts = self.motion.motion_ends - 1
+    pos = torch.searchsorted(lasts, frames).clamp(max=lasts.numel() - 1)
+    on_last = lasts[pos] == frames
     frames = torch.where(on_last, frames - 1, frames)
     self.set_time_steps(env_ids, frames)
 
@@ -460,7 +464,7 @@ class MotionCommand(CommandTerm):
       self.cfg.pose_range.get(key, (0.0, 0.0))
       for key in ["x", "y", "z", "roll", "pitch", "yaw"]
     ]
-    ranges = torch.tensor(range_list, device=self.device)
+    ranges = device_tensor(tuple(map(tuple, range_list)), self.device)
     rand_samples = sample_uniform(
       ranges[:, 0], ranges[:, 1], (len(env_ids), 6), device=self.device
     )
@@ -473,7 +477,7 @@ class MotionCommand(CommandTerm):
       self.cfg.velocity_range.get(key, (0.0, 0.0))
       for key in ["x", "y", "z", "roll", "pitch", "yaw"]
     ]
-    ranges = torch.tensor(range_list, device=self.device)
+    ranges = device_tensor(tuple(map(tuple, range_list)), self.device)
     rand_samples = sample_uniform(
       ranges[:, 0], ranges[:, 1], (len(env_ids), 6), device=self.device
     )

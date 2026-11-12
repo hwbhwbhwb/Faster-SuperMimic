@@ -3,6 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING, cast
 
 import torch
+from mjlab.utils.device_scalar import device_tensor
 
 from mjlab.sensor import ContactSensor
 from mjlab.utils.lab_api.math import quat_error_magnitude
@@ -15,12 +16,15 @@ if TYPE_CHECKING:
 
 def _get_body_indexes(
   command: MotionCommand, body_names: tuple[str, ...] | None
-) -> list[int]:
-  return [
-    i
-    for i, name in enumerate(command.cfg.body_names)
-    if (body_names is None) or (name in body_names)
-  ]
+) -> torch.Tensor:
+  return device_tensor(
+    tuple(
+      i
+      for i, name in enumerate(command.cfg.body_names)
+      if (body_names is None) or (name in body_names)
+    ),
+    command.device,
+  )
 
 
 def motion_global_anchor_position_error_exp(

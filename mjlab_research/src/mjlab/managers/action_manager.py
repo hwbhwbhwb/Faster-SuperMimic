@@ -7,6 +7,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Sequence
 
 import torch
+from mjlab.utils.device_scalar import device_scalar
 from prettytable import PrettyTable
 
 from mjlab.managers.manager_base import ManagerBase, ManagerTermBase
@@ -141,9 +142,9 @@ class ActionManager(ManagerBase):
     if env_ids is None:
       env_ids = slice(None)
     # Reset action history.
-    self._prev_action[env_ids] = 0.0
-    self._prev_prev_action[env_ids] = 0.0
-    self._action[env_ids] = 0.0
+    self._prev_action[env_ids] = device_scalar(0.0, self._prev_action)
+    self._prev_prev_action[env_ids] = device_scalar(0.0, self._prev_prev_action)
+    self._action[env_ids] = device_scalar(0.0, self._action)
     # Reset action terms.
     for term in self._terms.values():
       term.reset(env_ids=env_ids)

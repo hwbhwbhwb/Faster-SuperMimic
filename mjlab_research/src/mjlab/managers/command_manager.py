@@ -9,6 +9,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING, Any, Sequence
 
 import torch
+from mjlab.utils.device_scalar import device_scalar
 from prettytable import PrettyTable
 
 from mjlab.managers.manager_base import ManagerBase, ManagerTermBase
@@ -102,9 +103,9 @@ class CommandTerm(ManagerTermBase):
     assert isinstance(env_ids, torch.Tensor)
     extras = {}
     for metric_name, metric_value in self.metrics.items():
-      extras[metric_name] = torch.mean(metric_value[env_ids]).item()
-      metric_value[env_ids] = 0.0
-    self.command_counter[env_ids] = 0
+      extras[metric_name] = torch.mean(metric_value[env_ids])
+      metric_value[env_ids] = device_scalar(0.0, metric_value)
+    self.command_counter[env_ids] = device_scalar(0, self.command_counter)
     self._resample(env_ids)
     return extras
 

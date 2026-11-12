@@ -27,6 +27,7 @@ from typing import Any, Literal
 import mujoco
 import mujoco_warp as mjwarp
 import torch
+from mjlab.utils.device_scalar import device_scalar
 
 from mjlab.entity import Entity
 from mjlab.sensor.sensor import Sensor, SensorCfg
@@ -354,10 +355,14 @@ class ContactSensor(Sensor[ContactData]):
 
     # Reset air time state for specified envs.
     if self._air_time_state is not None:
-      self._air_time_state.current_air_time[env_ids] = 0.0
-      self._air_time_state.last_air_time[env_ids] = 0.0
-      self._air_time_state.current_contact_time[env_ids] = 0.0
-      self._air_time_state.last_contact_time[env_ids] = 0.0
+      state = self._air_time_state
+      for buf in (
+        state.current_air_time,
+        state.last_air_time,
+        state.current_contact_time,
+        state.last_contact_time,
+      ):
+        buf[env_ids] = device_scalar(0.0, buf)
 
     # Reset history state for specified envs.
     if self._history_state is not None:

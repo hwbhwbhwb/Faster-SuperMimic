@@ -6,6 +6,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 import torch
+from mjlab.utils.device_scalar import device_scalar
 
 from mjlab.actuator.actuator import TransmissionType
 from mjlab.managers.action_manager import ActionTerm, ActionTermCfg
@@ -164,7 +165,7 @@ class BaseAction(ActionTerm):
 
   def reset(self, env_ids: torch.Tensor | slice | None = None) -> None:
     """Reset raw actions to zero for specified environments."""
-    self._raw_actions[env_ids] = 0.0
+    self._raw_actions[env_ids] = device_scalar(0.0, self._raw_actions)
 
 
 ##

@@ -5,6 +5,7 @@ from typing import Any
 import mujoco
 import numpy as np
 import torch
+from mjlab.utils.device_scalar import device_scalar
 import warp as wp
 from prettytable import PrettyTable
 
@@ -482,7 +483,7 @@ class ManagerBasedRlEnv:
     if self.cfg.auto_reset and len(reset_env_ids) > 0:
       command_dt = self._command_dt
       command_dt.fill_(self.step_dt)
-      command_dt[reset_env_ids] = 0.0
+      command_dt[reset_env_ids] = device_scalar(0.0, command_dt)
       self.command_manager.compute(dt=command_dt)
     else:
       self.command_manager.compute(dt=self.step_dt)
@@ -614,5 +615,7 @@ class ManagerBasedRlEnv:
     info = self.termination_manager.reset(env_ids)
     self.extras["log"].update(info)
     # reset the episode length buffer.
-    self.episode_length_buf[env_ids] = 0
-    self._manual_reset_pending[env_ids] = False
+    self.episode_length_buf[env_ids] = device_scalar(0, self.episode_length_buf)
+    self._manual_reset_pending[env_ids] = device_scalar(
+      False, self._manual_reset_pending
+    )

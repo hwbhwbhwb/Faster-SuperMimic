@@ -9,6 +9,7 @@ from typing import TYPE_CHECKING, Literal, cast
 import mujoco
 import mujoco_warp as mjwarp
 import torch
+from mjlab.utils.device_scalar import device_scalar
 import warp as wp
 
 from mjlab.entity.variants import VARIANT_DEPENDENT_FIELDS, build_variant_model
@@ -510,7 +511,7 @@ class Simulation:
         self._reset_mask.fill_(True)
       else:
         self._reset_mask.fill_(False)
-        self._reset_mask[env_ids] = True
+        self._reset_mask[env_ids] = device_scalar(True, self._reset_mask)
 
       if self.use_cuda_graph and self.reset_graph is not None:
         wp.capture_launch(self.reset_graph)

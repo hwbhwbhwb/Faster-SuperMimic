@@ -5,6 +5,7 @@ from typing import TYPE_CHECKING, Sequence
 
 import mujoco_warp as mjwarp
 import torch
+from mjlab.utils.device_scalar import device_scalar
 
 from mjlab.utils.lab_api.math import (
   quat_apply,
@@ -237,13 +238,16 @@ class EntityData:
   def clear_state(self, env_ids: torch.Tensor | slice | None = None) -> None:
     if self.is_actuated:
       env_ids = self._resolve_env_ids(env_ids)
-      self.joint_pos_target[env_ids] = 0.0
-      self.joint_vel_target[env_ids] = 0.0
-      self.joint_effort_target[env_ids] = 0.0
-      self.tendon_len_target[env_ids] = 0.0
-      self.tendon_vel_target[env_ids] = 0.0
-      self.tendon_effort_target[env_ids] = 0.0
-      self.site_effort_target[env_ids] = 0.0
+      for target in (
+        self.joint_pos_target,
+        self.joint_vel_target,
+        self.joint_effort_target,
+        self.tendon_len_target,
+        self.tendon_vel_target,
+        self.tendon_effort_target,
+        self.site_effort_target,
+      ):
+        target[env_ids] = device_scalar(0.0, target)
 
   def _resolve_env_ids(
     self, env_ids: torch.Tensor | slice | None
