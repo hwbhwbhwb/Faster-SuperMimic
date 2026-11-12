@@ -3,11 +3,18 @@
 from __future__ import annotations
 
 import functools
+import os
 from collections.abc import Callable, Iterable, Sequence
 
 import torch
+import torch._inductor.config
 import torch.nn as nn
 from tensordict import TensorDict
+
+# Switch (default on): horizontal fusion of the many small independent pointwise kernels the
+# compiled world-model steps produce (one launch per group instead of per kernel).
+if os.environ.get("SUPERMIMIC_COMBO_KERNELS", "1") == "1":
+  torch._inductor.config.combo_kernels = True
 
 
 def build_optimizers(
