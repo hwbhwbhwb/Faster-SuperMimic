@@ -1,4 +1,5 @@
 import math
+import os
 from collections.abc import Callable
 from dataclasses import dataclass, field
 from typing import Any
@@ -357,6 +358,16 @@ class ManagerBasedRlEnv:
     # Initialize startup events if defined.
     if "startup" in self.event_manager.available_modes:
       self.event_manager.apply(mode="startup")
+
+    # Switch (default on): compile the per-step reward and termination computations (dozens of
+    # small eager ops each) on CUDA.
+    if os.environ.get("MJLAB_COMPILE_MANAGERS", "1") == "1" and "cuda" in str(
+      self.device
+    ):
+      self.reward_manager.compute = torch.compile(self.reward_manager.compute)
+      self.termination_manager.compute = torch.compile(
+        self.termination_manager.compute
+      )
 
   def reset(
     self,
