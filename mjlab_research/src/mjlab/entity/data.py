@@ -32,6 +32,16 @@ def compute_velocity_from_cvel(
   return torch.cat([lin_vel_w, ang_vel_w], dim=-1)
 
 
+def compute_lin_velocity_from_cvel(
+  pos: torch.Tensor,
+  subtree_com: torch.Tensor,
+  cvel: torch.Tensor,
+) -> torch.Tensor:
+  """The linear part of :func:`compute_velocity_from_cvel`, computed the same way."""
+  offset = subtree_com - pos
+  return cvel[..., 3:6] - torch.cross(cvel[..., 0:3], offset, dim=-1)
+
+
 @dataclass
 class EntityData:
   """Data container for an entity.
@@ -472,17 +482,22 @@ class EntityData:
   @property
   def root_link_pos_w(self) -> torch.Tensor:
     """Root link position in world frame. Shape (num_envs, 3)."""
-    return self.root_link_pose_w[:, 0:3]
+    # The component alone: the same values as slicing root_link_pose_w, without
+    # building the full pose on every access (cloned: an int index is a view).
+    return self.data.xpos[:, self.indexing.root_body_id].clone()
 
   @property
   def root_link_quat_w(self) -> torch.Tensor:
     """Root link quaternion in world frame. Shape (num_envs, 4)."""
-    return self.root_link_pose_w[:, 3:7]
+    return self.data.xquat[:, self.indexing.root_body_id].clone()
 
   @property
   def root_link_lin_vel_w(self) -> torch.Tensor:
     """Root link linear velocity in world frame. Shape (num_envs, 3)."""
-    return self.root_link_vel_w[:, 0:3]
+    pos = self.data.xpos[:, self.indexing.root_body_id]
+    subtree_com = self.data.subtree_com[:, self.indexing.root_body_id]
+    cvel = self.data.cvel[:, self.indexing.root_body_id]
+    return compute_lin_velocity_from_cvel(pos, subtree_com, cvel)
 
   @property
   def root_link_ang_vel_w(self) -> torch.Tensor:
@@ -513,17 +528,20 @@ class EntityData:
   @property
   def body_link_pos_w(self) -> torch.Tensor:
     """Body link positions in world frame. Shape (num_envs, num_bodies, 3)."""
-    return self.body_link_pose_w[..., 0:3]
+    return self.data.xpos[:, self.indexing.body_ids]
 
   @property
   def body_link_quat_w(self) -> torch.Tensor:
     """Body link quaternions in world frame. Shape (num_envs, num_bodies, 4)."""
-    return self.body_link_pose_w[..., 3:7]
+    return self.data.xquat[:, self.indexing.body_ids]
 
   @property
   def body_link_lin_vel_w(self) -> torch.Tensor:
     """Body link linear velocities in world frame. Shape (num_envs, num_bodies, 3)."""
-    return self.body_link_vel_w[..., 0:3]
+    pos = self.data.xpos[:, self.indexing.body_ids]
+    subtree_com = self.data.subtree_com[:, self.indexing.root_body_id]
+    cvel = self.data.cvel[:, self.indexing.body_ids]
+    return compute_lin_velocity_from_cvel(pos, subtree_com.unsqueeze(1), cvel)
 
   @property
   def body_link_ang_vel_w(self) -> torch.Tensor:

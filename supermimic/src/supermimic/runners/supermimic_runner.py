@@ -412,6 +412,11 @@ class BaseRunner[CfgT: BaseRunnerCfg]:
     raw_actions = actions.detach().clone()
     prev_action = self.action_manager.action.clone()
 
+    if actor_td is not None:
+      # Queued before the env step so an env pre-reset hook can flush it. Not
+      # cloned: all three are fresh tensors of this step that nothing writes to.
+      self._pending_norm_updates.append((curr_states, raw_actions, actor_td.detach()))
+
     next_obs, rewards, dones, extras = self.env.step(actions)
 
     truncated = extras.get(
@@ -431,15 +436,6 @@ class BaseRunner[CfgT: BaseRunnerCfg]:
     if extra_fields:
       fields.update(extra_fields)
     self.replay_buffer.insert(TensorDict(fields, batch_size=[self.env.num_envs]))
-
-    if actor_td is not None:
-      self._pending_norm_updates.append(
-        (
-          curr_states.clone(),
-          raw_actions.clone(),
-          actor_td.detach().clone(),
-        )
-      )
     return next_obs, rewards, dones, extras
 
   def _flush_normalization(self) -> None:
@@ -447,7 +443,10 @@ class BaseRunner[CfgT: BaseRunnerCfg]:
     if not self._pending_norm_updates:
       return
     states, actions, actor_inputs = zip(*self._pending_norm_updates, strict=True)
-    self.world_model_learner.update_normalization(torch.cat(states), torch.cat(actions))
+    self.world_model_learner.update_normalization(
+      states[0] if len(states) == 1 else torch.cat(states),
+      actions[0] if len(actions) == 1 else torch.cat(actions),
+    )
     self._update_actor_normalization(actor_inputs)
     self._pending_norm_updates.clear()
 
@@ -549,12 +548,35 @@ class SuperMimicRunner(BaseRunner[SuperMimicRunnerCfg]):
         actor, self.wm_env, policy_cfg, device=self.device
       )
 
+    # One compiled call for the per-step observation + actor forward (dozens of
+    # small eager ops otherwise); the action noise is drawn outside, in order.
+    self._collection_policy = (
+      torch.compile(self._collection_actor)
+      if torch.cuda.is_available()
+      else self._collection_actor
+    )
+
     # Collection reads only the sim's full state and actor sensor; its critic and
     # goal groups (the runner builds its own goals and critic input) go unused.
     obs_manager = self.env.unwrapped.observation_manager
     obs_manager.set_skipped_groups(
       set(obs_manager.active_terms) - {"actor", "full_state"}
     )
+
+  def _collection_actor(
+    self,
+    curr_states: torch.Tensor,
+    sim_actor_obs: torch.Tensor,
+    motion_times: torch.Tensor,
+    sim_ctx: torch.Tensor,
+  ) -> tuple[TensorDict, torch.Tensor]:
+    """The actor's observation of the sim state and its (noise-free) action."""
+    rep_state = self._representation.represent(curr_states)
+    aux_state = self._representation.extract_aux_state(curr_states)
+    actor_td = self._build_sim_obs_td(
+      rep_state, aux_state, sim_actor_obs, motion_times, sim_ctx
+    )
+    return actor_td, self.policy_learner.actor(actor_td)
 
   def _build_sim_obs_td(
     self,
@@ -611,50 +633,68 @@ class SuperMimicRunner(BaseRunner[SuperMimicRunnerCfg]):
       # Pre-step frames; env.step() advances time_steps in place.
       motion_times = self.motion_cmd.time_steps.to(self.device).clone()
 
-      rep_state = self._representation.represent(curr_states)
-      aux_state = self._representation.extract_aux_state(curr_states)
       sim_ctx = self._sim_context.read(self.env.unwrapped)
-      actor_td = self._build_sim_obs_td(
-        rep_state, aux_state, sim_actor_obs, motion_times, sim_ctx
+      actor_td, actions = self._collection_policy(
+        curr_states, sim_actor_obs, motion_times, sim_ctx
       )
-
-      actions = self.policy_learner.actor(actor_td)
       actions = actions + torch.randn_like(actions) * self.policy_learner.cfg.noise
 
       extra_fields = {"sim_ctx": sim_ctx}
       if self._stores_actor_obs:
         extra_fields["actor_obs"] = sim_actor_obs
 
-      next_obs, rewards, dones, extras = self._step_and_store(
-        actions,
-        curr_states,
-        actor_td=actor_td,
-        extra_fields=extra_fields,
-      )
+      # The normalizer updates and the sampler's record need only this step's
+      # inputs, rewards and termination flags: env.step runs them before its
+      # reset, while the device is still on the physics. The new reset
+      # distribution still applies from the next step on.
+      sampler_weights: list[torch.Tensor | None] = [None]
+
+      def pre_reset() -> None:
+        with torch.inference_mode(False):
+          self._flush_normalization()
+        if self._sampler is not None:
+          sampler_weights[0] = self._record_returns(motion_times)
+
+      self.env.unwrapped.pre_reset_hook = pre_reset
+      try:
+        next_obs, rewards, dones, extras = self._step_and_store(
+          actions,
+          curr_states,
+          actor_td=actor_td,
+          extra_fields=extra_fields,
+        )
+      finally:
+        self.env.unwrapped.pre_reset_hook = None
       self._advance_sim_history(next_obs["actor"].to(self.device), dones)
       terminated = self.env.unwrapped.termination_manager.terminated
       self.logger.process_env_step(rewards, terminated, extras)
 
-      if self._sampler is not None:
-        # A failure on a step that also times out counts as the time-out.
-        manager = self.env.unwrapped.termination_manager
-        truncated = manager.time_outs.to(self.device, torch.bool)
-        clip_end = manager.get_term("motion_end").to(self.device, torch.bool)
-        weights = self._sampler.record(
-          motion_times,
-          rewards,
-          terminated.to(self.device, torch.bool) & ~truncated,
-          clip_end,
-          truncated & ~clip_end,
-        )
-        if weights is not None:
-          self.motion_cmd.set_sampling_distribution(weights)
+      if sampler_weights[0] is not None:
+        self.motion_cmd.set_sampling_distribution(sampler_weights[0])
 
     self._flush_normalization()
     return self.env.num_envs
 
+  def _record_returns(self, motion_times: torch.Tensor) -> torch.Tensor | None:
+    """Feed this step's rewards and episode ends to the return sampler."""
+    assert self._sampler is not None
+    env = self.env.unwrapped
+    # A failure on a step that also times out counts as the time-out.
+    manager = env.termination_manager
+    truncated = manager.time_outs.to(self.device, torch.bool)
+    clip_end = manager.get_term("motion_end").to(self.device, torch.bool)
+    return self._sampler.record(
+      motion_times,
+      env.reward_buf,
+      manager.terminated.to(self.device, torch.bool) & ~truncated,
+      clip_end,
+      truncated & ~clip_end,
+    )
+
   def _update_actor_normalization(self, actor_inputs: tuple[TensorDict, ...]) -> None:
-    self.policy_learner.actor.train()
+    actor = self.policy_learner.actor
+    if not all(m.training for m in actor.modules()):
+      actor.train()
     for actor_td in actor_inputs:
       self.policy_learner.actor.update_normalization(actor_td)
 

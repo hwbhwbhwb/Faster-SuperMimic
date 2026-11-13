@@ -1,4 +1,5 @@
 import math
+from collections.abc import Callable
 from dataclasses import dataclass, field
 from typing import Any
 
@@ -194,6 +195,7 @@ class ManagerBasedRlEnv:
     )
     # Scratch buffer for per-env command dt; see step().
     self._command_dt = torch.zeros(self.cfg.scene.num_envs, device=device)
+    self.pre_reset_hook: Callable[[], None] | None = None
 
     # Initialize scene and simulation.
     self.scene = Scene(self.cfg.scene, device=device)
@@ -464,6 +466,12 @@ class ManagerBasedRlEnv:
       self.event_manager.apply(mode="step", dt=self.step_dt)
     if "interval" in self.event_manager.available_modes:
       self.event_manager.apply(mode="interval", dt=self.step_dt)
+
+    # Caller work that needs neither the reset nor the observations; it runs on
+    # the host while the device is still on this step's physics (the nonzero
+    # below waits for it).
+    if self.pre_reset_hook is not None:
+      self.pre_reset_hook()
 
     # Reset envs that terminated/timed-out and log the episode info.
     reset_env_ids = self.reset_buf.nonzero(as_tuple=False).squeeze(-1)

@@ -43,6 +43,23 @@ def build_mlp(
   return nn.Sequential(*layers)
 
 
+def _aligned_mlp(mlp: nn.Sequential, x: torch.Tensor) -> torch.Tensor:
+  """``mlp(x)`` with the first Linear's reduction dim zero-padded to a multiple of
+  4: cuBLAS takes its slow align1 kernels for an fp32 K like 130 (2-3x slower than
+  K=132). The padded columns are zero in both operands, so the product is the
+  same sum (accumulated in a different order)."""
+  first = mlp[0]
+  pad = -first.in_features % 4
+  if not pad:
+    return mlp(x)
+  h = nn.functional.linear(
+    nn.functional.pad(x, (0, pad)), nn.functional.pad(first.weight, (0, pad)), first.bias
+  )
+  for layer in mlp[1:]:
+    h = layer(h)
+  return h
+
+
 class Dynamics(nn.Module):
   """Differentiable forward model: ``(rep_state, action, aux_state) -> (next_aux, next_rep)``.
 
@@ -92,8 +109,8 @@ class Dynamics(nn.Module):
   ) -> tuple[torch.Tensor, torch.Tensor]:
     state_norm = self.state_normalizer(rep_state)
     action_norm = self.action_normalizer(self.proc(action))
-    prediction = self.mlp(torch.cat([state_norm, action_norm, sim_ctx], dim=-1))
-    return self._apply_prediction(aux_state, rep_state, prediction, self.dt)
+    x = torch.cat([state_norm, action_norm, sim_ctx], dim=-1)
+    return self._apply_prediction(aux_state, rep_state, _aligned_mlp(self.mlp, x), self.dt)
 
   def normalizers(self) -> list[_CudaGraphNormalization]:
     return [self.state_normalizer, self.action_normalizer]

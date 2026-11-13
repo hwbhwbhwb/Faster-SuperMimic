@@ -163,16 +163,18 @@ class ActorCriticPolicyLearner(BpttPolicyLearner):
     self._v_max = self.wm_env.max_step_reward / (1 - self.cfg.gamma)
     # Compiled so the minibatch's LayerNorm backward is a fused kernel; eager
     # ATen's gamma/beta reduction runs on a handful of blocks for 32k rows.
-    self._critic_loss_fn = (
-      torch.compile(self._critic_loss)
+    self._critic_error_fn = (
+      torch.compile(self._critic_error)
       if torch.device(device).type == "cuda"
-      else self._critic_loss
+      else self._critic_error
     )
 
-  def _critic_loss(
+  def _critic_error(
     self, obs: torch.Tensor, returns: torch.Tensor, idx: torch.Tensor
   ) -> torch.Tensor:
-    return (returns[idx] - self.critic(obs[idx])).pow(2).mean()
+    # The squared-error mean stays outside the compiled region: fused with the
+    # 128 -> 1 output layer, inductor reduces all 32k rows in a single block.
+    return returns[idx] - self.critic(obs[idx])
 
   def _bootstrap(
     self, obs: TensorDict, survival: torch.Tensor, term_prob: torch.Tensor
@@ -203,7 +205,7 @@ class ActorCriticPolicyLearner(BpttPolicyLearner):
     losses = []
     for _ in range(5):
       for idx in perm.view(4, -1):
-        loss = self._critic_loss_fn(obs, returns, idx)
+        loss = self._critic_error_fn(obs, returns, idx).pow(2).mean()
         _optimize_step(
           self.critic_optimizers, loss, self.critic.parameters(), max_norm=1.0
         )
