@@ -217,6 +217,14 @@ class MotionCommand(CommandTerm):
     self._ghost_color = np.array(cfg.viz.ghost_color, dtype=np.float32)
     self._pending_forward = False
 
+    # Switch (default on): the per-step tracking metrics and relative body poses
+    # as one compiled call each instead of dozens of small eager ops.
+    if os.environ.get("MJLAB_COMPILE_COMMAND", "1") == "1" and "cuda" in str(
+      self.device
+    ):
+      self._update_metrics = torch.compile(self._update_metrics)
+      self.update_relative_body_poses = torch.compile(self.update_relative_body_poses)
+
   @property
   def command(self) -> torch.Tensor:
     return torch.cat([self.joint_pos, self.joint_vel], dim=1)
