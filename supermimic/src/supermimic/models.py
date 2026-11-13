@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import functools
 from typing import TYPE_CHECKING
 
 import torch
@@ -22,10 +23,30 @@ class _CudaGraphNormalization(EmpiricalNormalization):
 
   @torch.jit.unused
   def update(self, x: torch.Tensor) -> None:
-    std_buf = self._std
-    super().update(x)
-    std_buf.copy_(self._std)
-    self._std = std_buf
+    if torch.distributed.is_initialized() or self.until is not None:
+      std_buf = self._std
+      super().update(x)
+      std_buf.copy_(self._std)
+      self._std = std_buf
+      return
+    if not self.training:
+      return
+    # The upstream update, op for op, except that the batch count is a cached
+    # device tensor: torch.tensor(n, device=cuda) is a pageable copy and a sync.
+    count_x = _device_count(x.shape[0], self.count.dtype, self.count.device)
+    var_x = torch.var(x, dim=0, unbiased=False, keepdim=True)
+    mean_x = torch.mean(x, dim=0, keepdim=True)
+    self.count += count_x
+    rate = count_x / self.count
+    delta_mean = mean_x - self._mean
+    self._mean += rate * delta_mean
+    self._var += rate * (var_x - self._var + delta_mean * (mean_x - self._mean))
+    self._std.copy_(torch.sqrt(self._var))
+
+
+@functools.cache
+def _device_count(n: int, dtype: torch.dtype, device: torch.device) -> torch.Tensor:
+  return torch.tensor(n, dtype=dtype, device=device)
 
 
 def build_mlp(
