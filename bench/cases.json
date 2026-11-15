@@ -1,0 +1,10 @@
+[
+ {
+  "name": "update",
+  "seed": 0,
+  "steps": 5,
+  "phase": "update",
+  "mode": "update",
+  "state": "$ASSETS/fixture/update_state.pt"
+ }
+]

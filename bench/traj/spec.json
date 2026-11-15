@@ -1,0 +1,170 @@
+{
+ "case": {
+  "steps": 800,
+  "phase": "iteration",
+  "mode": "loop"
+ },
+ "note": "800 iterations of the frozen recipe from scratch (updates start once the replay buffer holds 8 transitions, then 0.4 per iteration), deterministic kernels, same seed for reference and candidate; numerical equivalence only, not quality. *_update_rms is 0 on iterations without an update. *_step1_rms / *_first_steps_rms: the first optimizer step / the mean of the first 3 (eager, before graph capture), constant once reached. last/<key> repeats the latest update's loss_dict value. (The logger's finished-episode mean return was dropped as an endpoint during formulation: it is a running mean over the last ~100 episodes, so its window mean is one strongly autocorrelated sample whose spread six seeds underestimate; an equivalent reordering came out at 3.08 sigma on it alone.)",
+ "endpoints": [
+  {
+   "name": "dynamics_early_update_rms",
+   "loss": "dynamics_update_rms",
+   "steps": [
+    8,
+    60
+   ]
+  },
+  {
+   "name": "dynamics_update_rms",
+   "loss": "dynamics_update_rms",
+   "steps": [
+    400,
+    800
+   ]
+  },
+  {
+   "name": "dynamics_drift_rms",
+   "loss": "dynamics_drift_rms",
+   "steps": [
+    799,
+    800
+   ]
+  },
+  {
+   "name": "dynamics_param_norm",
+   "loss": "dynamics_param_norm",
+   "steps": [
+    780,
+    800
+   ]
+  },
+  {
+   "name": "actor_update_rms",
+   "loss": "actor_update_rms",
+   "steps": [
+    400,
+    800
+   ]
+  },
+  {
+   "name": "actor_drift_rms",
+   "loss": "actor_drift_rms",
+   "steps": [
+    799,
+    800
+   ]
+  },
+  {
+   "name": "actor_param_norm",
+   "loss": "actor_param_norm",
+   "steps": [
+    780,
+    800
+   ]
+  },
+  {
+   "name": "critic_update_rms",
+   "loss": "critic_update_rms",
+   "steps": [
+    400,
+    800
+   ]
+  },
+  {
+   "name": "critic_drift_rms",
+   "loss": "critic_drift_rms",
+   "steps": [
+    799,
+    800
+   ]
+  },
+  {
+   "name": "critic_param_norm",
+   "loss": "critic_param_norm",
+   "steps": [
+    780,
+    800
+   ]
+  },
+  {
+   "name": "wm_step1_rms",
+   "loss": "wm_step1_rms",
+   "steps": [
+    100,
+    102
+   ]
+  },
+  {
+   "name": "wm_first_steps_rms",
+   "loss": "wm_first_steps_rms",
+   "steps": [
+    100,
+    102
+   ]
+  },
+  {
+   "name": "actor_step1_rms",
+   "loss": "actor_step1_rms",
+   "steps": [
+    100,
+    102
+   ]
+  },
+  {
+   "name": "actor_first_steps_rms",
+   "loss": "actor_first_steps_rms",
+   "steps": [
+    100,
+    102
+   ]
+  },
+  {
+   "name": "critic_step1_rms",
+   "loss": "critic_step1_rms",
+   "steps": [
+    100,
+    102
+   ]
+  },
+  {
+   "name": "critic_first_steps_rms",
+   "loss": "critic_first_steps_rms",
+   "steps": [
+    100,
+    102
+   ]
+  },
+  {
+   "name": "Loss_state",
+   "loss": "last/Loss/state",
+   "steps": [
+    400,
+    800
+   ]
+  },
+  {
+   "name": "Policy_reward",
+   "loss": "last/Policy/reward",
+   "steps": [
+    400,
+    800
+   ]
+  },
+  {
+   "name": "Policy_grad_norm",
+   "loss": "last/Policy/grad_norm",
+   "steps": [
+    400,
+    800
+   ]
+  },
+  {
+   "name": "Policy_value_function",
+   "loss": "last/Policy/value_function",
+   "steps": [
+    400,
+    800
+   ]
+  }
+ ]
+}

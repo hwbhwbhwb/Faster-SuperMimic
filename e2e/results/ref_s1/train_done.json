@@ -1,0 +1,1 @@
+{"argv": ["train.py", "SuperMimic-GenCoord-G1", "--motion-file", "$ASSETS/data/lafan1/*.npz", "--env.seed", "1", "--runner.max-iterations", "20001"], "tree": "targets/reference", "seed": 1, "iters": 20000, "wall_s": 2258.1, "saves": 21, "missing_snaps": []}

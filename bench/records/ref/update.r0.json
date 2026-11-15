@@ -1,0 +1,2341 @@
+{
+ "schema": "numerics-record@1",
+ "adapter": "supermimic-official",
+ "case": {
+  "name": "update",
+  "seed": 0,
+  "steps": 5,
+  "phase": "update",
+  "mode": "update",
+  "state": "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/fixture/update_state.pt"
+ },
+ "golden": false,
+ "rank": 0,
+ "world_size": 1,
+ "torch": "2.14.0+cu130",
+ "sync": {},
+ "sketch_dim": 4096,
+ "steps": [
+  {
+   "step": 0,
+   "phase": "update",
+   "rng_before": "4d82d20f68a210aeaf70d9d0",
+   "rng_after": "e4dd2a299f00f964d12214ee",
+   "counters": {},
+   "invariants": {
+    "buffer_step": 300,
+    "buffer_transitions": 300,
+    "config_digest": "b24f3746cecd3e073f1b2d1f",
+    "data_digest": "0cc701c10d7bd4ac66ac8e02",
+    "fp32_precision": "matmul=tf32 cudnn=tf32",
+    "iteration": 300
+   },
+   "math_mode": {
+    "cudnn.allow_tf32": true,
+    "matmul.fp16_reduced_precision_reduction": true,
+    "matmul.bf16_reduced_precision_reduction": true,
+    "sdp.flash": true,
+    "sdp.mem_efficient": true,
+    "sdp.math": true,
+    "cudnn.deterministic": true,
+    "deterministic_algorithms": true
+   },
+   "dtype_traced": false,
+   "tensors": {
+    "buffer/actor.goal_normalizers.motion._mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      640
+     ],
+     "sha256": "739fcfe5390d2a51410cd8a00d36b17a21299cf621b702493a30e5eb602ad1e0",
+     "norm": 7.187760227476287,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.motion._std": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      640
+     ],
+     "sha256": "f08eefe6fde52edcf2a25c7ff969b591baaf9858249dbd4669c23a71c5708901",
+     "norm": 28.086856286891507,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.motion._var": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      640
+     ],
+     "sha256": "6802b50ffce93b772390e9a24cfd01f7686245928f9e06921f1bb54d62ad2832",
+     "norm": 54.591356037148685,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.motion.count": {
+     "kind": "buffer",
+     "dtype": "int64",
+     "shape": [],
+     "sha256": "0ed5781aab396aa9ec3fa8a728e064ce55ad016275b9d7a825be9fcd9792d9f3",
+     "norm": null,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.velocity._mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      3
+     ],
+     "sha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b",
+     "norm": 0.0,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.velocity._std": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      3
+     ],
+     "sha256": "8a31a40ecac0ceb4d87b30bd156ca7a547e8e33dc071454b765fbc777d1c34a1",
+     "norm": 1.7320508075688772,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.velocity._var": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      3
+     ],
+     "sha256": "8a31a40ecac0ceb4d87b30bd156ca7a547e8e33dc071454b765fbc777d1c34a1",
+     "norm": 1.7320508075688772,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.velocity.count": {
+     "kind": "buffer",
+     "dtype": "int64",
+     "shape": [],
+     "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+     "norm": null,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.obs_normalizer._mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "be7ee19d51a70024539edb0b388f4d73a959ac8d93e85801e52a116e7d6ebb42",
+     "norm": 2.9658606284038656,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.obs_normalizer._std": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "a082d64fa1e778c0fa4e8d2057b6bb045e774efa0a4568ecbc2a16923d4b8cfe",
+     "norm": 10.213729806565185,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.obs_normalizer._var": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "2d9888b495e9f4330f8cbb2432466b4274aecf39249f95a7b287f821752e8d6c",
+     "norm": 20.858866181515072,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.obs_normalizer.count": {
+     "kind": "buffer",
+     "dtype": "int64",
+     "shape": [],
+     "sha256": "0ed5781aab396aa9ec3fa8a728e064ce55ad016275b9d7a825be9fcd9792d9f3",
+     "norm": null,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_normalizer._mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      29
+     ],
+     "sha256": "e23108cf38b4c31e1b0faee8aa3cdc441d529401b7e5aa00d242c0fb7afe317b",
+     "norm": 1.5347034214740185,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_normalizer._std": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      29
+     ],
+     "sha256": "5049814744ecdf79d6ba6031760b3b204a477ad27962c7bf6f660edea4c567f2",
+     "norm": 0.9371731768554568,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_normalizer._var": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      29
+     ],
+     "sha256": "78f886383ac821633e8f338ef08a02fd26e02758f6d2b86fbbbffa98bb2ed38b",
+     "norm": 0.19469379465269904,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_normalizer.count": {
+     "kind": "buffer",
+     "dtype": "int64",
+     "shape": [],
+     "sha256": "0ed5781aab396aa9ec3fa8a728e064ce55ad016275b9d7a825be9fcd9792d9f3",
+     "norm": null,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_offset": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      29
+     ],
+     "sha256": "89d7c6003f60e5682475902fa38f922cc6ca89f82be367d435030802e9561f5d",
+     "norm": 1.4944390777471726,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_scale": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      29
+     ],
+     "sha256": "b280381c1e972ebd1c10f251f7be0a02786e37f067357d6cd3f0c30803c37f71",
+     "norm": 2.2562561937484737,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.state_normalizer._mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "be7ee19d51a70024539edb0b388f4d73a959ac8d93e85801e52a116e7d6ebb42",
+     "norm": 2.9658606284038656,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.state_normalizer._std": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "a082d64fa1e778c0fa4e8d2057b6bb045e774efa0a4568ecbc2a16923d4b8cfe",
+     "norm": 10.213729806565185,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.state_normalizer._var": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "2d9888b495e9f4330f8cbb2432466b4274aecf39249f95a7b287f821752e8d6c",
+     "norm": 20.858866181515072,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.state_normalizer.count": {
+     "kind": "buffer",
+     "dtype": "int64",
+     "shape": [],
+     "sha256": "0ed5781aab396aa9ec3fa8a728e064ce55ad016275b9d7a825be9fcd9792d9f3",
+     "norm": null,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/sim_context.mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      33
+     ],
+     "sha256": "a6a44d223a88f187e14e8e2dad67c006f1e0e828254c859c2da2aa521e480255",
+     "norm": 0.75,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/sim_context.scale": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      33
+     ],
+     "sha256": "3906022a904d5bf1cf593f58828228b1a5db9d6e65bc21e6b5334e7a92adf10d",
+     "norm": 0.45937456319343806,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/delta/actor": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      9837661
+     ],
+     "sha256": "6259da6544608b74488652836ae4b29eb3290f9d5a1c589e7aa2efb875089176",
+     "norm": 0.11415225370313152,
+     "finite": true,
+     "stored": "sketch"
+    },
+    "loss/delta/critic": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      231425
+     ],
+     "sha256": "d012fe163c1235e0e78601368406336570c140f4233a5cdbefb8492831b2a2eb",
+     "norm": 0.5988726499162955,
+     "finite": true,
+     "stored": "sketch"
+    },
+    "loss/delta/dynamics": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      8744995
+     ],
+     "sha256": "8cca7a9dcf48dbf02186ab2a9653ca294a9aca245f47c89fe2071d45a84c7f5e",
+     "norm": 0.5746272563182705,
+     "finite": true,
+     "stored": "sketch"
+    },
+    "loss/metric/Loss/joint_pos": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "05f04f7b30ae193cc3708f5703f2b36c00a857b51e90d4e7b0565b07d49b5e0b",
+     "norm": 0.0005678962916135788,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Loss/joint_vel": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "6a45a1b10964594cb55c4360f59b6e07ae5b4a5e408644b4cea7851852b21712",
+     "norm": 0.30575332045555115,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Loss/root_ori": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "deccaf24e18e70d8c37df34b05c942e3af4b6958fc12d0b77ac797f5506bd281",
+     "norm": 6.0752845456590876e-05,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Loss/root_pos": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "214d47bac55cd547d18cea86ef21bf00d88ae5e9bbaf97c2ea0165b1e412edc0",
+     "norm": 2.1140531316632405e-05,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Loss/state": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "f3bb7fe326788d1c6d86524599aefce5bf3aff5a6e4cf71201ac0a7b4cd9af07",
+     "norm": 0.06496235728263855,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Policy/bc_loss": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+     "norm": 0.0,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Policy/grad_norm": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "37bf9d83133c7db076c4d62c9e691f78ae103a3fbf8a62769e59aedfe8dae60b",
+     "norm": 1.262878179550171,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Policy/reward": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "ac5fd3faec9144fb00ae080d3d4e9656b70255b1c7ca9775d24c592a5d8557a2",
+     "norm": 1.4090977907180786,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Policy/value_function": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "2d47f91947dd54024d0521df458395b5bf70fa4e4a37a5b98915ac962c9b3391",
+     "norm": 0.012437187135219574,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/optim/actor": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      3108504
+     ],
+     "sha256": "88621fbbf379ed801cbc8812cabaf23c4d10d06d7d67bb3f54c5b6fefa271fb8",
+     "norm": 646.3126577174985,
+     "finite": true,
+     "stored": "sketch"
+    },
+    "loss/optim/critic": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      397323
+     ],
+     "sha256": "16a0154738ebd6301b20c30ed46efc470e0ba8008aaa370340606351490c0728",
+     "norm": 7080.000000017205,
+     "finite": true,
+     "stored": "sketch"
+    },
+    "loss/optim/wm": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      712786
+     ],
+     "sha256": "12e34a45dad362339e8fa7652bd774084816c0bf39b111dd9a21f6f50b8a926e",
+     "norm": 4087.639906155538,
+     "finite": true,
+     "stored": "sketch"
+    }
+   }
+  },
+  {
+   "step": 1,
+   "phase": "update",
+   "rng_before": "e4dd2a299f00f964d12214ee",
+   "rng_after": "139e73b03663f0771938e01c",
+   "counters": {},
+   "invariants": {
+    "buffer_step": 300,
+    "buffer_transitions": 300,
+    "config_digest": "b24f3746cecd3e073f1b2d1f",
+    "data_digest": "0cc701c10d7bd4ac66ac8e02",
+    "fp32_precision": "matmul=tf32 cudnn=tf32",
+    "iteration": 300
+   },
+   "math_mode": {
+    "cudnn.allow_tf32": true,
+    "matmul.fp16_reduced_precision_reduction": true,
+    "matmul.bf16_reduced_precision_reduction": true,
+    "sdp.flash": true,
+    "sdp.mem_efficient": true,
+    "sdp.math": true,
+    "cudnn.deterministic": true,
+    "deterministic_algorithms": true
+   },
+   "dtype_traced": false,
+   "tensors": {
+    "buffer/actor.goal_normalizers.motion._mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      640
+     ],
+     "sha256": "739fcfe5390d2a51410cd8a00d36b17a21299cf621b702493a30e5eb602ad1e0",
+     "norm": 7.187760227476287,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.motion._std": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      640
+     ],
+     "sha256": "f08eefe6fde52edcf2a25c7ff969b591baaf9858249dbd4669c23a71c5708901",
+     "norm": 28.086856286891507,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.motion._var": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      640
+     ],
+     "sha256": "6802b50ffce93b772390e9a24cfd01f7686245928f9e06921f1bb54d62ad2832",
+     "norm": 54.591356037148685,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.motion.count": {
+     "kind": "buffer",
+     "dtype": "int64",
+     "shape": [],
+     "sha256": "0ed5781aab396aa9ec3fa8a728e064ce55ad016275b9d7a825be9fcd9792d9f3",
+     "norm": null,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.velocity._mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      3
+     ],
+     "sha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b",
+     "norm": 0.0,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.velocity._std": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      3
+     ],
+     "sha256": "8a31a40ecac0ceb4d87b30bd156ca7a547e8e33dc071454b765fbc777d1c34a1",
+     "norm": 1.7320508075688772,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.velocity._var": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      3
+     ],
+     "sha256": "8a31a40ecac0ceb4d87b30bd156ca7a547e8e33dc071454b765fbc777d1c34a1",
+     "norm": 1.7320508075688772,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.velocity.count": {
+     "kind": "buffer",
+     "dtype": "int64",
+     "shape": [],
+     "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+     "norm": null,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.obs_normalizer._mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "be7ee19d51a70024539edb0b388f4d73a959ac8d93e85801e52a116e7d6ebb42",
+     "norm": 2.9658606284038656,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.obs_normalizer._std": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "a082d64fa1e778c0fa4e8d2057b6bb045e774efa0a4568ecbc2a16923d4b8cfe",
+     "norm": 10.213729806565185,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.obs_normalizer._var": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "2d9888b495e9f4330f8cbb2432466b4274aecf39249f95a7b287f821752e8d6c",
+     "norm": 20.858866181515072,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.obs_normalizer.count": {
+     "kind": "buffer",
+     "dtype": "int64",
+     "shape": [],
+     "sha256": "0ed5781aab396aa9ec3fa8a728e064ce55ad016275b9d7a825be9fcd9792d9f3",
+     "norm": null,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_normalizer._mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      29
+     ],
+     "sha256": "e23108cf38b4c31e1b0faee8aa3cdc441d529401b7e5aa00d242c0fb7afe317b",
+     "norm": 1.5347034214740185,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_normalizer._std": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      29
+     ],
+     "sha256": "5049814744ecdf79d6ba6031760b3b204a477ad27962c7bf6f660edea4c567f2",
+     "norm": 0.9371731768554568,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_normalizer._var": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      29
+     ],
+     "sha256": "78f886383ac821633e8f338ef08a02fd26e02758f6d2b86fbbbffa98bb2ed38b",
+     "norm": 0.19469379465269904,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_normalizer.count": {
+     "kind": "buffer",
+     "dtype": "int64",
+     "shape": [],
+     "sha256": "0ed5781aab396aa9ec3fa8a728e064ce55ad016275b9d7a825be9fcd9792d9f3",
+     "norm": null,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_offset": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      29
+     ],
+     "sha256": "89d7c6003f60e5682475902fa38f922cc6ca89f82be367d435030802e9561f5d",
+     "norm": 1.4944390777471726,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_scale": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      29
+     ],
+     "sha256": "b280381c1e972ebd1c10f251f7be0a02786e37f067357d6cd3f0c30803c37f71",
+     "norm": 2.2562561937484737,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.state_normalizer._mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "be7ee19d51a70024539edb0b388f4d73a959ac8d93e85801e52a116e7d6ebb42",
+     "norm": 2.9658606284038656,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.state_normalizer._std": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "a082d64fa1e778c0fa4e8d2057b6bb045e774efa0a4568ecbc2a16923d4b8cfe",
+     "norm": 10.213729806565185,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.state_normalizer._var": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "2d9888b495e9f4330f8cbb2432466b4274aecf39249f95a7b287f821752e8d6c",
+     "norm": 20.858866181515072,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.state_normalizer.count": {
+     "kind": "buffer",
+     "dtype": "int64",
+     "shape": [],
+     "sha256": "0ed5781aab396aa9ec3fa8a728e064ce55ad016275b9d7a825be9fcd9792d9f3",
+     "norm": null,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/sim_context.mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      33
+     ],
+     "sha256": "a6a44d223a88f187e14e8e2dad67c006f1e0e828254c859c2da2aa521e480255",
+     "norm": 0.75,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/sim_context.scale": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      33
+     ],
+     "sha256": "3906022a904d5bf1cf593f58828228b1a5db9d6e65bc21e6b5334e7a92adf10d",
+     "norm": 0.45937456319343806,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/delta/actor": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      9837661
+     ],
+     "sha256": "a70b9c9d136944a309714bdb07d157aac0a150f7795a4518a2052a6cf8b8972f",
+     "norm": 0.11447530646718271,
+     "finite": true,
+     "stored": "sketch"
+    },
+    "loss/delta/critic": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      231425
+     ],
+     "sha256": "071257e5c1b3a8a6ea7f4dd580f48b875e3c38fc2be3449bc981b4759cda40e6",
+     "norm": 0.5779587355876653,
+     "finite": true,
+     "stored": "sketch"
+    },
+    "loss/delta/dynamics": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      8744995
+     ],
+     "sha256": "7f9b6676934421cee7460c33fef6ed78029c7a1c0f6ca512208cf9d2e42daaa9",
+     "norm": 0.5824648095777429,
+     "finite": true,
+     "stored": "sketch"
+    },
+    "loss/metric/Loss/joint_pos": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "99ca4cd4e4676a55c80eaf40afd0b690bc5c2c35b301e34bd887f94a2db01d7f",
+     "norm": 0.0005555720417760313,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Loss/joint_vel": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "d1161dd41f6a559a1118eacace4697558cc6eddfb474d050ab783d0008d6ae57",
+     "norm": 0.30010873079299927,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Loss/root_ori": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "21e1b04299ff518d54cccac2806e7bf77779aba971042573d378f96aafad89c0",
+     "norm": 5.8403966249898076e-05,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Loss/root_pos": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "24f752e1d90a55de713fe4ee7782d020e28cbabc516301c092d65b707256f8b2",
+     "norm": 2.0707439034595154e-05,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Loss/state": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "5970565d6a6a6918f206dc2bf8bb02b43e92a56f0aab3e124b45a892f623cc85",
+     "norm": 0.06327400356531143,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Policy/bc_loss": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+     "norm": 0.0,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Policy/grad_norm": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "3b5d7725b20bae4400a8f2a0eab8d9e9fcf6f4385596b647c123bdb7a3cf9717",
+     "norm": 1.1785364151000977,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Policy/reward": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "ff8388ea4e036e6048ed6ff4b33c5c0b07f4f591176369f27bfe433f20a82ba6",
+     "norm": 1.3944087028503418,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Policy/value_function": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "93cfe15b758dab7b5e6002ede03a70f2f3bed5bd2a60bf1330ee96e43294c2d7",
+     "norm": 0.011312243528664112,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/optim/actor": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      3108504
+     ],
+     "sha256": "41fd2d8a472fc73179ce35f0ba17071ec7036c6ce1d1c2eec270b1e2de4feaaf",
+     "norm": 651.7898833192436,
+     "finite": true,
+     "stored": "sketch"
+    },
+    "loss/optim/critic": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      397323
+     ],
+     "sha256": "0c940d98bcfe6b571e4709a61fb5f665bf43a111dcc74abb41d959aac8bc1b83",
+     "norm": 7140.00000001615,
+     "finite": true,
+     "stored": "sketch"
+    },
+    "loss/optim/wm": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      712786
+     ],
+     "sha256": "47d206164c6afe292a1e3631a0b56f706646a62098eb039b3667169ebdb73392",
+     "norm": 4122.280922310003,
+     "finite": true,
+     "stored": "sketch"
+    }
+   }
+  },
+  {
+   "step": 2,
+   "phase": "update",
+   "rng_before": "139e73b03663f0771938e01c",
+   "rng_after": "da53ef90a5e53b3523dac109",
+   "counters": {},
+   "invariants": {
+    "buffer_step": 300,
+    "buffer_transitions": 300,
+    "config_digest": "b24f3746cecd3e073f1b2d1f",
+    "data_digest": "0cc701c10d7bd4ac66ac8e02",
+    "fp32_precision": "matmul=tf32 cudnn=tf32",
+    "iteration": 300
+   },
+   "math_mode": {
+    "cudnn.allow_tf32": true,
+    "matmul.fp16_reduced_precision_reduction": true,
+    "matmul.bf16_reduced_precision_reduction": true,
+    "sdp.flash": true,
+    "sdp.mem_efficient": true,
+    "sdp.math": true,
+    "cudnn.deterministic": true,
+    "deterministic_algorithms": true
+   },
+   "dtype_traced": false,
+   "tensors": {
+    "buffer/actor.goal_normalizers.motion._mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      640
+     ],
+     "sha256": "739fcfe5390d2a51410cd8a00d36b17a21299cf621b702493a30e5eb602ad1e0",
+     "norm": 7.187760227476287,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.motion._std": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      640
+     ],
+     "sha256": "f08eefe6fde52edcf2a25c7ff969b591baaf9858249dbd4669c23a71c5708901",
+     "norm": 28.086856286891507,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.motion._var": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      640
+     ],
+     "sha256": "6802b50ffce93b772390e9a24cfd01f7686245928f9e06921f1bb54d62ad2832",
+     "norm": 54.591356037148685,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.motion.count": {
+     "kind": "buffer",
+     "dtype": "int64",
+     "shape": [],
+     "sha256": "0ed5781aab396aa9ec3fa8a728e064ce55ad016275b9d7a825be9fcd9792d9f3",
+     "norm": null,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.velocity._mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      3
+     ],
+     "sha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b",
+     "norm": 0.0,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.velocity._std": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      3
+     ],
+     "sha256": "8a31a40ecac0ceb4d87b30bd156ca7a547e8e33dc071454b765fbc777d1c34a1",
+     "norm": 1.7320508075688772,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.velocity._var": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      3
+     ],
+     "sha256": "8a31a40ecac0ceb4d87b30bd156ca7a547e8e33dc071454b765fbc777d1c34a1",
+     "norm": 1.7320508075688772,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.velocity.count": {
+     "kind": "buffer",
+     "dtype": "int64",
+     "shape": [],
+     "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+     "norm": null,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.obs_normalizer._mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "be7ee19d51a70024539edb0b388f4d73a959ac8d93e85801e52a116e7d6ebb42",
+     "norm": 2.9658606284038656,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.obs_normalizer._std": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "a082d64fa1e778c0fa4e8d2057b6bb045e774efa0a4568ecbc2a16923d4b8cfe",
+     "norm": 10.213729806565185,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.obs_normalizer._var": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "2d9888b495e9f4330f8cbb2432466b4274aecf39249f95a7b287f821752e8d6c",
+     "norm": 20.858866181515072,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.obs_normalizer.count": {
+     "kind": "buffer",
+     "dtype": "int64",
+     "shape": [],
+     "sha256": "0ed5781aab396aa9ec3fa8a728e064ce55ad016275b9d7a825be9fcd9792d9f3",
+     "norm": null,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_normalizer._mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      29
+     ],
+     "sha256": "e23108cf38b4c31e1b0faee8aa3cdc441d529401b7e5aa00d242c0fb7afe317b",
+     "norm": 1.5347034214740185,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_normalizer._std": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      29
+     ],
+     "sha256": "5049814744ecdf79d6ba6031760b3b204a477ad27962c7bf6f660edea4c567f2",
+     "norm": 0.9371731768554568,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_normalizer._var": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      29
+     ],
+     "sha256": "78f886383ac821633e8f338ef08a02fd26e02758f6d2b86fbbbffa98bb2ed38b",
+     "norm": 0.19469379465269904,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_normalizer.count": {
+     "kind": "buffer",
+     "dtype": "int64",
+     "shape": [],
+     "sha256": "0ed5781aab396aa9ec3fa8a728e064ce55ad016275b9d7a825be9fcd9792d9f3",
+     "norm": null,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_offset": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      29
+     ],
+     "sha256": "89d7c6003f60e5682475902fa38f922cc6ca89f82be367d435030802e9561f5d",
+     "norm": 1.4944390777471726,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_scale": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      29
+     ],
+     "sha256": "b280381c1e972ebd1c10f251f7be0a02786e37f067357d6cd3f0c30803c37f71",
+     "norm": 2.2562561937484737,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.state_normalizer._mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "be7ee19d51a70024539edb0b388f4d73a959ac8d93e85801e52a116e7d6ebb42",
+     "norm": 2.9658606284038656,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.state_normalizer._std": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "a082d64fa1e778c0fa4e8d2057b6bb045e774efa0a4568ecbc2a16923d4b8cfe",
+     "norm": 10.213729806565185,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.state_normalizer._var": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "2d9888b495e9f4330f8cbb2432466b4274aecf39249f95a7b287f821752e8d6c",
+     "norm": 20.858866181515072,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.state_normalizer.count": {
+     "kind": "buffer",
+     "dtype": "int64",
+     "shape": [],
+     "sha256": "0ed5781aab396aa9ec3fa8a728e064ce55ad016275b9d7a825be9fcd9792d9f3",
+     "norm": null,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/sim_context.mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      33
+     ],
+     "sha256": "a6a44d223a88f187e14e8e2dad67c006f1e0e828254c859c2da2aa521e480255",
+     "norm": 0.75,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/sim_context.scale": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      33
+     ],
+     "sha256": "3906022a904d5bf1cf593f58828228b1a5db9d6e65bc21e6b5334e7a92adf10d",
+     "norm": 0.45937456319343806,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/delta/actor": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      9837661
+     ],
+     "sha256": "681479f5b51f2ea37debf8bc44c2176fe0a2e612ba603e264f659fb8a9065782",
+     "norm": 0.1150951112400421,
+     "finite": true,
+     "stored": "sketch"
+    },
+    "loss/delta/critic": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      231425
+     ],
+     "sha256": "863d5535fe88b4366bd7d3eecb675230d2d7344c3feb8ff29a336599c40da02e",
+     "norm": 0.5799727949582965,
+     "finite": true,
+     "stored": "sketch"
+    },
+    "loss/delta/dynamics": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      8744995
+     ],
+     "sha256": "0073757e56e7260459ca5d4551cf2abcc359fbce27c6cb64ea67d37ddeaa7ffb",
+     "norm": 0.5726738472252039,
+     "finite": true,
+     "stored": "sketch"
+    },
+    "loss/metric/Loss/joint_pos": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "f06082387f6ed6781f4405d6dcddc5e32f762804141265dca4eb0605abe2fb5d",
+     "norm": 0.0005531611968763173,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Loss/joint_vel": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "8b72a3d23c7e767bcdb8edb917fea1403d3b03b86d2fae2dc8c729af176948f7",
+     "norm": 0.2975221276283264,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Loss/root_ori": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "8de5453d842bf834206542533fc38c1f8c0fb08a4211e0a972841cf09cfa427d",
+     "norm": 5.831506132381037e-05,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Loss/root_pos": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "a7585a56bceb55e4b63d8469931392ac35e0e3705f5a24b4d001b6e987622746",
+     "norm": 1.9912977222702466e-05,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Loss/state": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "ca9a19f73a6b388c69996e440377874574bbb62087faff1c1e618f8bae0a4146",
+     "norm": 0.06269637495279312,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Policy/bc_loss": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+     "norm": 0.0,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Policy/grad_norm": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "efc6d272582601730668c93aa7668e344f70f654f27673a661bb08f3a491434e",
+     "norm": 1.33049738407135,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Policy/reward": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "17a16dc2def2805dc20abe123c0086cbb73750f6a97fbcba09d31683194bb87c",
+     "norm": 1.4109082221984863,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Policy/value_function": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "38ceb48e95645ccc67dd4349b70490331bec5240629b7fcc167dd23ac07ef050",
+     "norm": 0.011740843765437603,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/optim/actor": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      3108504
+     ],
+     "sha256": "84a3160c2b62bd821f77a92d46008086d8f1d6c902f3a2b13afba40367016210",
+     "norm": 657.2671092773872,
+     "finite": true,
+     "stored": "sketch"
+    },
+    "loss/optim/critic": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      397323
+     ],
+     "sha256": "5ebdf4648839a877ea1fd381172aac8774f5cc2c81fb5cb24a1f983f64dcd680",
+     "norm": 7200.000000015402,
+     "finite": true,
+     "stored": "sketch"
+    },
+    "loss/optim/wm": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      712786
+     ],
+     "sha256": "1aeecfe95191ae67235d1387201028b79f2f77c78e4b4d91e116362f29acd3af",
+     "norm": 4156.921938457577,
+     "finite": true,
+     "stored": "sketch"
+    }
+   }
+  },
+  {
+   "step": 3,
+   "phase": "update",
+   "rng_before": "da53ef90a5e53b3523dac109",
+   "rng_after": "954a08716b3823bb7286e7a4",
+   "counters": {},
+   "invariants": {
+    "buffer_step": 300,
+    "buffer_transitions": 300,
+    "config_digest": "b24f3746cecd3e073f1b2d1f",
+    "data_digest": "0cc701c10d7bd4ac66ac8e02",
+    "fp32_precision": "matmul=tf32 cudnn=tf32",
+    "iteration": 300
+   },
+   "math_mode": {
+    "cudnn.allow_tf32": true,
+    "matmul.fp16_reduced_precision_reduction": true,
+    "matmul.bf16_reduced_precision_reduction": true,
+    "sdp.flash": true,
+    "sdp.mem_efficient": true,
+    "sdp.math": true,
+    "cudnn.deterministic": true,
+    "deterministic_algorithms": true
+   },
+   "dtype_traced": false,
+   "tensors": {
+    "buffer/actor.goal_normalizers.motion._mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      640
+     ],
+     "sha256": "739fcfe5390d2a51410cd8a00d36b17a21299cf621b702493a30e5eb602ad1e0",
+     "norm": 7.187760227476287,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.motion._std": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      640
+     ],
+     "sha256": "f08eefe6fde52edcf2a25c7ff969b591baaf9858249dbd4669c23a71c5708901",
+     "norm": 28.086856286891507,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.motion._var": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      640
+     ],
+     "sha256": "6802b50ffce93b772390e9a24cfd01f7686245928f9e06921f1bb54d62ad2832",
+     "norm": 54.591356037148685,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.motion.count": {
+     "kind": "buffer",
+     "dtype": "int64",
+     "shape": [],
+     "sha256": "0ed5781aab396aa9ec3fa8a728e064ce55ad016275b9d7a825be9fcd9792d9f3",
+     "norm": null,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.velocity._mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      3
+     ],
+     "sha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b",
+     "norm": 0.0,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.velocity._std": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      3
+     ],
+     "sha256": "8a31a40ecac0ceb4d87b30bd156ca7a547e8e33dc071454b765fbc777d1c34a1",
+     "norm": 1.7320508075688772,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.velocity._var": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      3
+     ],
+     "sha256": "8a31a40ecac0ceb4d87b30bd156ca7a547e8e33dc071454b765fbc777d1c34a1",
+     "norm": 1.7320508075688772,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.velocity.count": {
+     "kind": "buffer",
+     "dtype": "int64",
+     "shape": [],
+     "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+     "norm": null,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.obs_normalizer._mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "be7ee19d51a70024539edb0b388f4d73a959ac8d93e85801e52a116e7d6ebb42",
+     "norm": 2.9658606284038656,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.obs_normalizer._std": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "a082d64fa1e778c0fa4e8d2057b6bb045e774efa0a4568ecbc2a16923d4b8cfe",
+     "norm": 10.213729806565185,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.obs_normalizer._var": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "2d9888b495e9f4330f8cbb2432466b4274aecf39249f95a7b287f821752e8d6c",
+     "norm": 20.858866181515072,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.obs_normalizer.count": {
+     "kind": "buffer",
+     "dtype": "int64",
+     "shape": [],
+     "sha256": "0ed5781aab396aa9ec3fa8a728e064ce55ad016275b9d7a825be9fcd9792d9f3",
+     "norm": null,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_normalizer._mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      29
+     ],
+     "sha256": "e23108cf38b4c31e1b0faee8aa3cdc441d529401b7e5aa00d242c0fb7afe317b",
+     "norm": 1.5347034214740185,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_normalizer._std": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      29
+     ],
+     "sha256": "5049814744ecdf79d6ba6031760b3b204a477ad27962c7bf6f660edea4c567f2",
+     "norm": 0.9371731768554568,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_normalizer._var": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      29
+     ],
+     "sha256": "78f886383ac821633e8f338ef08a02fd26e02758f6d2b86fbbbffa98bb2ed38b",
+     "norm": 0.19469379465269904,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_normalizer.count": {
+     "kind": "buffer",
+     "dtype": "int64",
+     "shape": [],
+     "sha256": "0ed5781aab396aa9ec3fa8a728e064ce55ad016275b9d7a825be9fcd9792d9f3",
+     "norm": null,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_offset": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      29
+     ],
+     "sha256": "89d7c6003f60e5682475902fa38f922cc6ca89f82be367d435030802e9561f5d",
+     "norm": 1.4944390777471726,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_scale": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      29
+     ],
+     "sha256": "b280381c1e972ebd1c10f251f7be0a02786e37f067357d6cd3f0c30803c37f71",
+     "norm": 2.2562561937484737,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.state_normalizer._mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "be7ee19d51a70024539edb0b388f4d73a959ac8d93e85801e52a116e7d6ebb42",
+     "norm": 2.9658606284038656,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.state_normalizer._std": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "a082d64fa1e778c0fa4e8d2057b6bb045e774efa0a4568ecbc2a16923d4b8cfe",
+     "norm": 10.213729806565185,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.state_normalizer._var": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "2d9888b495e9f4330f8cbb2432466b4274aecf39249f95a7b287f821752e8d6c",
+     "norm": 20.858866181515072,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.state_normalizer.count": {
+     "kind": "buffer",
+     "dtype": "int64",
+     "shape": [],
+     "sha256": "0ed5781aab396aa9ec3fa8a728e064ce55ad016275b9d7a825be9fcd9792d9f3",
+     "norm": null,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/sim_context.mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      33
+     ],
+     "sha256": "a6a44d223a88f187e14e8e2dad67c006f1e0e828254c859c2da2aa521e480255",
+     "norm": 0.75,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/sim_context.scale": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      33
+     ],
+     "sha256": "3906022a904d5bf1cf593f58828228b1a5db9d6e65bc21e6b5334e7a92adf10d",
+     "norm": 0.45937456319343806,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/delta/actor": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      9837661
+     ],
+     "sha256": "7a787da3c6d2a013abb89eca16035f3da3abf3c38dd78e68a88f37e8ed0a25ee",
+     "norm": 0.1150192753087966,
+     "finite": true,
+     "stored": "sketch"
+    },
+    "loss/delta/critic": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      231425
+     ],
+     "sha256": "61ea4e9ef8997f771a2f17163ae5398086f9d65e85d3a473cfbd63be345e40dc",
+     "norm": 0.5914490501768231,
+     "finite": true,
+     "stored": "sketch"
+    },
+    "loss/delta/dynamics": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      8744995
+     ],
+     "sha256": "f336c53267437d41437efd9f0f8a613a0a3b9af772999d17445455a48cb84eee",
+     "norm": 0.5471974350854997,
+     "finite": true,
+     "stored": "sketch"
+    },
+    "loss/metric/Loss/joint_pos": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "ef21e435c3c3c5a4bc429b6bfa207669063e08a19e48d4e06e1f1a30f3a7ae85",
+     "norm": 0.0005526223103515804,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Loss/joint_vel": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "0e2418bc4e9752cb270b12405f2709115c813c0ffe920eb8e10b5b3de30a6c90",
+     "norm": 0.3026691675186157,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Loss/root_ori": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "224cd9a8fa66db03802338ee2a86be093dfbc7d357153c4892ebf52ad603da50",
+     "norm": 5.920805415371433e-05,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Loss/root_pos": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "5428beec599a67c455e213313bcc7c82de36fbf04e118ffcf3e35cd93fe30433",
+     "norm": 1.9535169485607184e-05,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Loss/state": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "9e962ccd87c4725a296035ebd51bd87f3b49ec826dffb471a1e9799ebf729116",
+     "norm": 0.06301543861627579,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Policy/bc_loss": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+     "norm": 0.0,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Policy/grad_norm": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "8e662cb2048bdf82e1bf4a19e287ded14268e013cc1534ad76b7cc01fcdd5ddf",
+     "norm": 1.3289645910263062,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Policy/reward": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "f431491ec02a9ff627eac288bba6e16f34f5a082b64938b7ebe0707866d33e2d",
+     "norm": 1.4234510660171509,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Policy/value_function": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "5a01cf31c5d62e2050203e64da9e506fd46f88c85b0bac537a5dc817df37ffa2",
+     "norm": 0.012651249766349792,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/optim/actor": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      3108504
+     ],
+     "sha256": "92808b63b25538ba100438354c7836abcc7834f1bdf0090a923cc9d16510ae08",
+     "norm": 662.7443349510623,
+     "finite": true,
+     "stored": "sketch"
+    },
+    "loss/optim/critic": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      397323
+     ],
+     "sha256": "afe4ee8d998de1778337517b2d6e33866038d0119694ff029093de5d478eeea9",
+     "norm": 7260.000000017609,
+     "finite": true,
+     "stored": "sketch"
+    },
+    "loss/optim/wm": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      712786
+     ],
+     "sha256": "e23f40941f768eaa1f5b314b535a1b0172108909d8d1618ce8597b97a9ab0499",
+     "norm": 4191.562954601843,
+     "finite": true,
+     "stored": "sketch"
+    }
+   }
+  },
+  {
+   "step": 4,
+   "phase": "update",
+   "rng_before": "954a08716b3823bb7286e7a4",
+   "rng_after": "f655fac884c10c850da4b402",
+   "counters": {},
+   "invariants": {
+    "buffer_step": 300,
+    "buffer_transitions": 300,
+    "config_digest": "b24f3746cecd3e073f1b2d1f",
+    "data_digest": "0cc701c10d7bd4ac66ac8e02",
+    "fp32_precision": "matmul=tf32 cudnn=tf32",
+    "iteration": 300
+   },
+   "math_mode": {
+    "cudnn.allow_tf32": true,
+    "matmul.fp16_reduced_precision_reduction": true,
+    "matmul.bf16_reduced_precision_reduction": true,
+    "sdp.flash": true,
+    "sdp.mem_efficient": true,
+    "sdp.math": true,
+    "cudnn.deterministic": true,
+    "deterministic_algorithms": true
+   },
+   "dtype_traced": false,
+   "tensors": {
+    "buffer/actor.goal_normalizers.motion._mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      640
+     ],
+     "sha256": "739fcfe5390d2a51410cd8a00d36b17a21299cf621b702493a30e5eb602ad1e0",
+     "norm": 7.187760227476287,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.motion._std": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      640
+     ],
+     "sha256": "f08eefe6fde52edcf2a25c7ff969b591baaf9858249dbd4669c23a71c5708901",
+     "norm": 28.086856286891507,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.motion._var": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      640
+     ],
+     "sha256": "6802b50ffce93b772390e9a24cfd01f7686245928f9e06921f1bb54d62ad2832",
+     "norm": 54.591356037148685,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.motion.count": {
+     "kind": "buffer",
+     "dtype": "int64",
+     "shape": [],
+     "sha256": "0ed5781aab396aa9ec3fa8a728e064ce55ad016275b9d7a825be9fcd9792d9f3",
+     "norm": null,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.velocity._mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      3
+     ],
+     "sha256": "15ec7bf0b50732b49f8228e07d24365338f9e3ab994b00af08e5a3bffe55fd8b",
+     "norm": 0.0,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.velocity._std": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      3
+     ],
+     "sha256": "8a31a40ecac0ceb4d87b30bd156ca7a547e8e33dc071454b765fbc777d1c34a1",
+     "norm": 1.7320508075688772,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.velocity._var": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      3
+     ],
+     "sha256": "8a31a40ecac0ceb4d87b30bd156ca7a547e8e33dc071454b765fbc777d1c34a1",
+     "norm": 1.7320508075688772,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.goal_normalizers.velocity.count": {
+     "kind": "buffer",
+     "dtype": "int64",
+     "shape": [],
+     "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc",
+     "norm": null,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.obs_normalizer._mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "be7ee19d51a70024539edb0b388f4d73a959ac8d93e85801e52a116e7d6ebb42",
+     "norm": 2.9658606284038656,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.obs_normalizer._std": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "a082d64fa1e778c0fa4e8d2057b6bb045e774efa0a4568ecbc2a16923d4b8cfe",
+     "norm": 10.213729806565185,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.obs_normalizer._var": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "2d9888b495e9f4330f8cbb2432466b4274aecf39249f95a7b287f821752e8d6c",
+     "norm": 20.858866181515072,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/actor.obs_normalizer.count": {
+     "kind": "buffer",
+     "dtype": "int64",
+     "shape": [],
+     "sha256": "0ed5781aab396aa9ec3fa8a728e064ce55ad016275b9d7a825be9fcd9792d9f3",
+     "norm": null,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_normalizer._mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      29
+     ],
+     "sha256": "e23108cf38b4c31e1b0faee8aa3cdc441d529401b7e5aa00d242c0fb7afe317b",
+     "norm": 1.5347034214740185,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_normalizer._std": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      29
+     ],
+     "sha256": "5049814744ecdf79d6ba6031760b3b204a477ad27962c7bf6f660edea4c567f2",
+     "norm": 0.9371731768554568,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_normalizer._var": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      29
+     ],
+     "sha256": "78f886383ac821633e8f338ef08a02fd26e02758f6d2b86fbbbffa98bb2ed38b",
+     "norm": 0.19469379465269904,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_normalizer.count": {
+     "kind": "buffer",
+     "dtype": "int64",
+     "shape": [],
+     "sha256": "0ed5781aab396aa9ec3fa8a728e064ce55ad016275b9d7a825be9fcd9792d9f3",
+     "norm": null,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_offset": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      29
+     ],
+     "sha256": "89d7c6003f60e5682475902fa38f922cc6ca89f82be367d435030802e9561f5d",
+     "norm": 1.4944390777471726,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.action_scale": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      29
+     ],
+     "sha256": "b280381c1e972ebd1c10f251f7be0a02786e37f067357d6cd3f0c30803c37f71",
+     "norm": 2.2562561937484737,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.state_normalizer._mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "be7ee19d51a70024539edb0b388f4d73a959ac8d93e85801e52a116e7d6ebb42",
+     "norm": 2.9658606284038656,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.state_normalizer._std": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "a082d64fa1e778c0fa4e8d2057b6bb045e774efa0a4568ecbc2a16923d4b8cfe",
+     "norm": 10.213729806565185,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.state_normalizer._var": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      1,
+      68
+     ],
+     "sha256": "2d9888b495e9f4330f8cbb2432466b4274aecf39249f95a7b287f821752e8d6c",
+     "norm": 20.858866181515072,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/dynamics.state_normalizer.count": {
+     "kind": "buffer",
+     "dtype": "int64",
+     "shape": [],
+     "sha256": "0ed5781aab396aa9ec3fa8a728e064ce55ad016275b9d7a825be9fcd9792d9f3",
+     "norm": null,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/sim_context.mean": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      33
+     ],
+     "sha256": "a6a44d223a88f187e14e8e2dad67c006f1e0e828254c859c2da2aa521e480255",
+     "norm": 0.75,
+     "finite": true,
+     "stored": "full"
+    },
+    "buffer/sim_context.scale": {
+     "kind": "buffer",
+     "dtype": "float32",
+     "shape": [
+      33
+     ],
+     "sha256": "3906022a904d5bf1cf593f58828228b1a5db9d6e65bc21e6b5334e7a92adf10d",
+     "norm": 0.45937456319343806,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/delta/actor": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      9837661
+     ],
+     "sha256": "2321511e4e36da5ef2401e65d69facceccd9d34c6ab79c04fdec7f5f84ff4aed",
+     "norm": 0.11414871105360555,
+     "finite": true,
+     "stored": "sketch"
+    },
+    "loss/delta/critic": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      231425
+     ],
+     "sha256": "4fa9e6da7a671ea6e5d761438a902e250046d4a4df660d02cd6626025eb12582",
+     "norm": 0.5929549687304093,
+     "finite": true,
+     "stored": "sketch"
+    },
+    "loss/delta/dynamics": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      8744995
+     ],
+     "sha256": "c2be05c9b99a6d1dd79eea240350a28fd0f53008263d67c8424925d64122a8d4",
+     "norm": 0.564346960964698,
+     "finite": true,
+     "stored": "sketch"
+    },
+    "loss/metric/Loss/joint_pos": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "e961bf2637469640e4720af1d65dd3b576a0dec01eab8e20d03783db2bc9499f",
+     "norm": 0.0005514787044376135,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Loss/joint_vel": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "c2223215dbd1a97ffdc3d8086c9e9588603df407fc84169b6fe6bc236dd0e577",
+     "norm": 0.29975417256355286,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Loss/root_ori": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "696c681aaef794fc2d1f56ededf36362363479494d0e628f9aec7e468472536e",
+     "norm": 5.894648711546324e-05,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Loss/root_pos": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "7fdee2e4b6db77207276e7018824222de60a2c8cf7d9b82530627f8dec96c52c",
+     "norm": 1.953788159880787e-05,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Loss/state": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "b6382a2df9a61e213b3d2d81f296aced8f4eb6f17eabf6e141bde35494b10416",
+     "norm": 0.06276267021894455,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Policy/bc_loss": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "df3f619804a92fdb4057192dc43dd748ea778adc52bc498ce80524c014b81119",
+     "norm": 0.0,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Policy/grad_norm": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "672cd3d8d16b39212cba12d81482be1fa0e4a32a609e38e0386d1642b0143dd5",
+     "norm": 1.6293361186981201,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Policy/reward": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "cca835f3070270ba6ccd22e6686952847b24bc8a58f551b4b754dfbaba8474f8",
+     "norm": 1.4636404514312744,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/metric/Policy/value_function": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      1
+     ],
+     "sha256": "1c52ed79b11177a9d3001a42430db23670b2e9108f391b214c4e04896f843cd4",
+     "norm": 0.013766482472419739,
+     "finite": true,
+     "stored": "full"
+    },
+    "loss/optim/actor": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      3108504
+     ],
+     "sha256": "342e82a9368643e56cb369d16dabe79d769510a0cbd925a428136ca194cbf107",
+     "norm": 668.2215588458048,
+     "finite": true,
+     "stored": "sketch"
+    },
+    "loss/optim/critic": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      397323
+     ],
+     "sha256": "dd78ca93220b84f13463b76c7d4f922ffc185b76f959970e9f8e93e2aa32e1f0",
+     "norm": 7320.000000021221,
+     "finite": true,
+     "stored": "sketch"
+    },
+    "loss/optim/wm": {
+     "kind": "loss",
+     "dtype": "float32",
+     "shape": [
+      712786
+     ],
+     "sha256": "19e2e02e1f255be3a758afd1e490fdcb0abf705029b0d0b4343780d3426d9309",
+     "norm": 4226.203970749866,
+     "finite": true,
+     "stored": "sketch"
+    }
+   }
+  }
+ ],
+ "dtype_ops": null
+}
