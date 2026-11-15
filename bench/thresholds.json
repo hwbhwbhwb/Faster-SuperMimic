@@ -1,0 +1,992 @@
+{
+ "gates": {
+  "update|r0|s0|buffer/actor.goal_normalizers.motion._mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|buffer/actor.goal_normalizers.motion._std": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|buffer/actor.goal_normalizers.motion._var": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|buffer/actor.goal_normalizers.motion.count": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|buffer/actor.goal_normalizers.velocity._mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|buffer/actor.goal_normalizers.velocity._std": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|buffer/actor.goal_normalizers.velocity._var": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|buffer/actor.goal_normalizers.velocity.count": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|buffer/actor.obs_normalizer._mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|buffer/actor.obs_normalizer._std": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|buffer/actor.obs_normalizer._var": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|buffer/actor.obs_normalizer.count": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|buffer/dynamics.action_normalizer._mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|buffer/dynamics.action_normalizer._std": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|buffer/dynamics.action_normalizer._var": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|buffer/dynamics.action_normalizer.count": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|buffer/dynamics.action_offset": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|buffer/dynamics.action_scale": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|buffer/dynamics.state_normalizer._mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|buffer/dynamics.state_normalizer._std": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|buffer/dynamics.state_normalizer._var": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|buffer/dynamics.state_normalizer.count": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|buffer/sim_context.mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|buffer/sim_context.scale": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|loss/delta/actor": {
+   "env": 0.004679613909002107,
+   "gate": 0.009359227818004214,
+   "pooled_env": 0.004679613909002107
+  },
+  "update|r0|s0|loss/delta/critic": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|loss/delta/dynamics": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|loss/metric/Loss/joint_pos": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|loss/metric/Loss/joint_vel": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|loss/metric/Loss/root_ori": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|loss/metric/Loss/root_pos": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|loss/metric/Loss/state": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|loss/metric/Policy/bc_loss": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|loss/metric/Policy/grad_norm": {
+   "env": 3.7757969527430694e-07,
+   "gate": 1e-06,
+   "pooled_env": 3.7757969527430694e-07
+  },
+  "update|r0|s0|loss/metric/Policy/reward": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|loss/metric/Policy/value_function": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|loss/optim/actor": {
+   "env": 5.549411449753368e-10,
+   "gate": 1e-06,
+   "pooled_env": 5.549411449753368e-10
+  },
+  "update|r0|s0|loss/optim/critic": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s0|loss/optim/wm": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|buffer/actor.goal_normalizers.motion._mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|buffer/actor.goal_normalizers.motion._std": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|buffer/actor.goal_normalizers.motion._var": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|buffer/actor.goal_normalizers.motion.count": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|buffer/actor.goal_normalizers.velocity._mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|buffer/actor.goal_normalizers.velocity._std": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|buffer/actor.goal_normalizers.velocity._var": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|buffer/actor.goal_normalizers.velocity.count": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|buffer/actor.obs_normalizer._mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|buffer/actor.obs_normalizer._std": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|buffer/actor.obs_normalizer._var": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|buffer/actor.obs_normalizer.count": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|buffer/dynamics.action_normalizer._mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|buffer/dynamics.action_normalizer._std": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|buffer/dynamics.action_normalizer._var": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|buffer/dynamics.action_normalizer.count": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|buffer/dynamics.action_offset": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|buffer/dynamics.action_scale": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|buffer/dynamics.state_normalizer._mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|buffer/dynamics.state_normalizer._std": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|buffer/dynamics.state_normalizer._var": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|buffer/dynamics.state_normalizer.count": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|buffer/sim_context.mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|buffer/sim_context.scale": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|loss/delta/actor": {
+   "env": 0.016276490124880336,
+   "gate": 0.03255298024976067,
+   "pooled_env": 0.016276490124880336
+  },
+  "update|r0|s1|loss/delta/critic": {
+   "env": 0.001993353378615865,
+   "gate": 0.00398670675723173,
+   "pooled_env": 0.001993353378615865
+  },
+  "update|r0|s1|loss/delta/dynamics": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|loss/metric/Loss/joint_pos": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|loss/metric/Loss/joint_vel": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|loss/metric/Loss/root_ori": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|loss/metric/Loss/root_pos": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|loss/metric/Loss/state": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|loss/metric/Policy/bc_loss": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s1|loss/metric/Policy/grad_norm": {
+   "env": 0.00037091808041042737,
+   "gate": 0.0007418361608208547,
+   "pooled_env": 0.00037091808041042737
+  },
+  "update|r0|s1|loss/metric/Policy/reward": {
+   "env": 3.07767329266929e-06,
+   "gate": 6.15534658533858e-06,
+   "pooled_env": 3.07767329266929e-06
+  },
+  "update|r0|s1|loss/metric/Policy/value_function": {
+   "env": 9.533666232272876e-05,
+   "gate": 0.00019067332464545753,
+   "pooled_env": 9.533666232272876e-05
+  },
+  "update|r0|s1|loss/optim/actor": {
+   "env": 1.0627556729372676e-07,
+   "gate": 1e-06,
+   "pooled_env": 1.0627556729372676e-07
+  },
+  "update|r0|s1|loss/optim/critic": {
+   "env": 1.2859333936135777e-08,
+   "gate": 1e-06,
+   "pooled_env": 1.2859333936135777e-08
+  },
+  "update|r0|s1|loss/optim/wm": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|buffer/actor.goal_normalizers.motion._mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|buffer/actor.goal_normalizers.motion._std": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|buffer/actor.goal_normalizers.motion._var": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|buffer/actor.goal_normalizers.motion.count": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|buffer/actor.goal_normalizers.velocity._mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|buffer/actor.goal_normalizers.velocity._std": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|buffer/actor.goal_normalizers.velocity._var": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|buffer/actor.goal_normalizers.velocity.count": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|buffer/actor.obs_normalizer._mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|buffer/actor.obs_normalizer._std": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|buffer/actor.obs_normalizer._var": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|buffer/actor.obs_normalizer.count": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|buffer/dynamics.action_normalizer._mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|buffer/dynamics.action_normalizer._std": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|buffer/dynamics.action_normalizer._var": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|buffer/dynamics.action_normalizer.count": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|buffer/dynamics.action_offset": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|buffer/dynamics.action_scale": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|buffer/dynamics.state_normalizer._mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|buffer/dynamics.state_normalizer._std": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|buffer/dynamics.state_normalizer._var": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|buffer/dynamics.state_normalizer.count": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|buffer/sim_context.mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|buffer/sim_context.scale": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|loss/delta/actor": {
+   "env": 0.0170642628751025,
+   "gate": 0.034128525750205,
+   "pooled_env": 0.0170642628751025
+  },
+  "update|r0|s2|loss/delta/critic": {
+   "env": 0.002358839519800496,
+   "gate": 0.004717679039600992,
+   "pooled_env": 0.002358839519800496
+  },
+  "update|r0|s2|loss/delta/dynamics": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|loss/metric/Loss/joint_pos": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|loss/metric/Loss/joint_vel": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|loss/metric/Loss/root_ori": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|loss/metric/Loss/root_pos": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|loss/metric/Loss/state": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|loss/metric/Policy/bc_loss": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s2|loss/metric/Policy/grad_norm": {
+   "env": 3.4674247096211e-05,
+   "gate": 0.0007418361608208547,
+   "pooled_env": 0.00037091808041042737
+  },
+  "update|r0|s2|loss/metric/Policy/reward": {
+   "env": 1.005444949100828e-05,
+   "gate": 2.010889898201656e-05,
+   "pooled_env": 1.005444949100828e-05
+  },
+  "update|r0|s2|loss/metric/Policy/value_function": {
+   "env": 5.393984992823224e-06,
+   "gate": 0.00019067332464545753,
+   "pooled_env": 9.533666232272876e-05
+  },
+  "update|r0|s2|loss/optim/actor": {
+   "env": 1.3523231324653227e-07,
+   "gate": 1e-06,
+   "pooled_env": 1.3523231324653227e-07
+  },
+  "update|r0|s2|loss/optim/critic": {
+   "env": 3.4513521619320094e-08,
+   "gate": 1e-06,
+   "pooled_env": 3.4513521619320094e-08
+  },
+  "update|r0|s2|loss/optim/wm": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|buffer/actor.goal_normalizers.motion._mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|buffer/actor.goal_normalizers.motion._std": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|buffer/actor.goal_normalizers.motion._var": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|buffer/actor.goal_normalizers.motion.count": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|buffer/actor.goal_normalizers.velocity._mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|buffer/actor.goal_normalizers.velocity._std": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|buffer/actor.goal_normalizers.velocity._var": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|buffer/actor.goal_normalizers.velocity.count": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|buffer/actor.obs_normalizer._mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|buffer/actor.obs_normalizer._std": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|buffer/actor.obs_normalizer._var": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|buffer/actor.obs_normalizer.count": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|buffer/dynamics.action_normalizer._mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|buffer/dynamics.action_normalizer._std": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|buffer/dynamics.action_normalizer._var": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|buffer/dynamics.action_normalizer.count": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|buffer/dynamics.action_offset": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|buffer/dynamics.action_scale": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|buffer/dynamics.state_normalizer._mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|buffer/dynamics.state_normalizer._std": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|buffer/dynamics.state_normalizer._var": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|buffer/dynamics.state_normalizer.count": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|buffer/sim_context.mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|buffer/sim_context.scale": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|loss/delta/actor": {
+   "env": 0.017712352372843982,
+   "gate": 0.035424704745687964,
+   "pooled_env": 0.017712352372843982
+  },
+  "update|r0|s3|loss/delta/critic": {
+   "env": 0.0027500051595051407,
+   "gate": 0.005500010319010281,
+   "pooled_env": 0.0027500051595051407
+  },
+  "update|r0|s3|loss/delta/dynamics": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|loss/metric/Loss/joint_pos": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|loss/metric/Loss/joint_vel": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|loss/metric/Loss/root_ori": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|loss/metric/Loss/root_pos": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|loss/metric/Loss/state": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|loss/metric/Policy/bc_loss": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s3|loss/metric/Policy/grad_norm": {
+   "env": 0.00017976055786051925,
+   "gate": 0.0007418361608208547,
+   "pooled_env": 0.00037091808041042737
+  },
+  "update|r0|s3|loss/metric/Policy/reward": {
+   "env": 3.433613552489441e-05,
+   "gate": 6.867227104978882e-05,
+   "pooled_env": 3.433613552489441e-05
+  },
+  "update|r0|s3|loss/metric/Policy/value_function": {
+   "env": 9.327028742854922e-05,
+   "gate": 0.00019067332464545753,
+   "pooled_env": 9.533666232272876e-05
+  },
+  "update|r0|s3|loss/optim/actor": {
+   "env": 1.5059807614629182e-07,
+   "gate": 1e-06,
+   "pooled_env": 1.5059807614629182e-07
+  },
+  "update|r0|s3|loss/optim/critic": {
+   "env": 2.881402744767392e-08,
+   "gate": 1e-06,
+   "pooled_env": 3.4513521619320094e-08
+  },
+  "update|r0|s3|loss/optim/wm": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|buffer/actor.goal_normalizers.motion._mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|buffer/actor.goal_normalizers.motion._std": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|buffer/actor.goal_normalizers.motion._var": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|buffer/actor.goal_normalizers.motion.count": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|buffer/actor.goal_normalizers.velocity._mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|buffer/actor.goal_normalizers.velocity._std": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|buffer/actor.goal_normalizers.velocity._var": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|buffer/actor.goal_normalizers.velocity.count": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|buffer/actor.obs_normalizer._mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|buffer/actor.obs_normalizer._std": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|buffer/actor.obs_normalizer._var": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|buffer/actor.obs_normalizer.count": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|buffer/dynamics.action_normalizer._mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|buffer/dynamics.action_normalizer._std": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|buffer/dynamics.action_normalizer._var": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|buffer/dynamics.action_normalizer.count": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|buffer/dynamics.action_offset": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|buffer/dynamics.action_scale": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|buffer/dynamics.state_normalizer._mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|buffer/dynamics.state_normalizer._std": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|buffer/dynamics.state_normalizer._var": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|buffer/dynamics.state_normalizer.count": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|buffer/sim_context.mean": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|buffer/sim_context.scale": {
+   "env": 0.0,
+   "gate": 1e-05,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|loss/delta/actor": {
+   "env": 0.01820251859806707,
+   "gate": 0.03640503719613414,
+   "pooled_env": 0.01820251859806707
+  },
+  "update|r0|s4|loss/delta/critic": {
+   "env": 0.0028960565358922843,
+   "gate": 0.0057921130717845685,
+   "pooled_env": 0.0028960565358922843
+  },
+  "update|r0|s4|loss/delta/dynamics": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|loss/metric/Loss/joint_pos": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|loss/metric/Loss/joint_vel": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|loss/metric/Loss/root_ori": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|loss/metric/Loss/root_pos": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|loss/metric/Loss/state": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|loss/metric/Policy/bc_loss": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  },
+  "update|r0|s4|loss/metric/Policy/grad_norm": {
+   "env": 0.0002709275232658919,
+   "gate": 0.0007418361608208547,
+   "pooled_env": 0.00037091808041042737
+  },
+  "update|r0|s4|loss/metric/Policy/reward": {
+   "env": 1.4660480378331614e-06,
+   "gate": 6.867227104978882e-05,
+   "pooled_env": 3.433613552489441e-05
+  },
+  "update|r0|s4|loss/metric/Policy/value_function": {
+   "env": 0.00017535257232481792,
+   "gate": 0.00035070514464963584,
+   "pooled_env": 0.00017535257232481792
+  },
+  "update|r0|s4|loss/optim/actor": {
+   "env": 1.7227566693045622e-07,
+   "gate": 1e-06,
+   "pooled_env": 1.7227566693045622e-07
+  },
+  "update|r0|s4|loss/optim/critic": {
+   "env": 1.2329537607363777e-08,
+   "gate": 1e-06,
+   "pooled_env": 3.4513521619320094e-08
+  },
+  "update|r0|s4|loss/optim/wm": {
+   "env": 0.0,
+   "gate": 1e-06,
+   "pooled_env": 0.0
+  }
+ },
+ "meta": {
+  "floor_bwd": 1e-05,
+  "floor_fwd": 1e-06,
+  "golden": null,
+  "k_bwd": 3.0,
+  "k_fwd": 2.0,
+  "pooling": "tensor family (call indices dropped) x all cases and ranks x steps up to this one",
+  "reference": "runs/f_urec_a",
+  "variants": [
+   "runs/f_urec_b"
+  ]
+ },
+ "ref_to_fp64": {}
+}

@@ -1,0 +1,102 @@
+{
+ "task": "Official SuperMimic (HybridRobotics/supermimic@abc124c + HybridRobotics/mjlab_research@dd51a9f), SuperMimic-GenCoord-G1, single GPU, 40 LAFAN1 clips, 4096 MuJoCo Warp envs, code defaults",
+ "world_size": 1,
+ "agent_max_tier": "N2",
+ "math_mode": "default",
+ "python": "$ASSETS/env/bin/python",
+ "reference": "targets/reference",
+ "reference_commit": "3db3066bbab7f042eff62f82e92193ba039a07b2",
+ "gpu_lock": "$TMPDIR/supermimic_official_gpu.lock",
+ "scratch": "$TMPDIR",
+ "cpu_affinity": "10-41",
+ "fixture": {
+  "npz_dir": "$ASSETS/data/lafan1"
+ },
+ "numerics": {
+  "adapter": "bench.sm_adapter:SuperMimicAdapter",
+  "cases": "bench/cases.json",
+  "sketch_dim": 4096,
+  "ref": "bench/records/ref",
+  "thresholds": "bench/thresholds.json",
+  "keep_records": false,
+  "exclude": []
+ },
+ "timing": {
+  "warmup": 300,
+  "window": 300,
+  "repeats": 2,
+  "frozen_band": 0.05,
+  "window_band": 0.03,
+  "window_band_candidate": 0.1,
+  "rng_check_iterations": 8
+ },
+ "benefit": {
+  "min_speedup": 1.02
+ },
+ "trajectory": {
+  "spec": "bench/traj/spec.json",
+  "frozen": "bench/traj/frozen.json",
+  "seeds": 1,
+  "sigma_k": 3
+ },
+ "timeouts_s": {
+  "timing": 2400,
+  "profile": 2400,
+  "numerics": 2400,
+  "trajectory": 3600
+ },
+ "min_scratch_free_gib": 20,
+ "reserved_env": [
+  "TMPDIR",
+  "TMP",
+  "TEMP",
+  "TORCHINDUCTOR_CACHE_DIR",
+  "TRITON_CACHE_DIR",
+  "CUDA_CACHE_PATH",
+  "XDG_CACHE_HOME",
+  "WARP_CACHE_PATH",
+  "MPLCONFIGDIR",
+  "CUDA_VISIBLE_DEVICES",
+  "CUDA_DEVICE_ORDER",
+  "PYTHONPATH",
+  "PYTHONHOME",
+  "PYTHONNOUSERSITE",
+  "HF_HOME",
+  "HF_HUB_OFFLINE",
+  "WANDB_MODE",
+  "NVIDIA_TF32_OVERRIDE",
+  "CUBLAS_WORKSPACE_CONFIG",
+  "LD_PRELOAD",
+  "LD_LIBRARY_PATH",
+  "MUJOCO_GL",
+  "PATH",
+  "LOCAL_RANK",
+  "RANK",
+  "WORLD_SIZE",
+  "LOCAL_WORLD_SIZE",
+  "MASTER_ADDR",
+  "MASTER_PORT",
+  "TORCHINDUCTOR_DETERMINISTIC",
+  "TORCHINDUCTOR_BATCH_INVARIANT",
+  "TORCHINDUCTOR_NUMERICS",
+  "PYTORCH_JIT",
+  "PYTORCH_JIT_ENABLE_NVFUSER",
+  "PYTORCH_NVFUSER_DISABLE",
+  "PYTHONUNBUFFERED",
+  "WANDB_DIR"
+ ],
+ "invalid_run_signatures": [
+  {
+   "regex": "hit config\\.(recompile_limit|cache_size_limit)",
+   "reason": "torch.compile hit the recompile limit: that code runs eager from then on, not the configuration requested"
+  },
+  {
+   "regex": "skipping cudagraphs due to",
+   "reason": "CUDA graphs were requested but skipped: the run measured the path without graphs"
+  },
+  {
+   "regex": "nefc overflow|ncon overflow|njmax overflow|nconmax overflow",
+   "reason": "MuJoCo Warp contact/constraint buffers overflowed: the simulation dropped contacts"
+  }
+ ]
+}

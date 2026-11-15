@@ -1,0 +1,418 @@
+{
+ "schema": "numerics-trajectory-frozen@2",
+ "spec": {
+  "case": {
+   "steps": 800,
+   "phase": "iteration",
+   "mode": "loop"
+  },
+  "note": "800 iterations of the frozen recipe from scratch (updates start once the replay buffer holds 8 transitions, then 0.4 per iteration), deterministic kernels, same seed for reference and candidate; numerical equivalence only, not quality. *_update_rms is 0 on iterations without an update. *_step1_rms / *_first_steps_rms: the first optimizer step / the mean of the first 3 (eager, before graph capture), constant once reached. last/<key> repeats the latest update's loss_dict value. (The logger's finished-episode mean return was dropped as an endpoint during formulation: it is a running mean over the last ~100 episodes, so its window mean is one strongly autocorrelated sample whose spread six seeds underestimate; an equivalent reordering came out at 3.08 sigma on it alone.)",
+  "endpoints": [
+   {
+    "name": "dynamics_early_update_rms",
+    "loss": "dynamics_update_rms",
+    "steps": [
+     8,
+     60
+    ]
+   },
+   {
+    "name": "dynamics_update_rms",
+    "loss": "dynamics_update_rms",
+    "steps": [
+     400,
+     800
+    ]
+   },
+   {
+    "name": "dynamics_drift_rms",
+    "loss": "dynamics_drift_rms",
+    "steps": [
+     799,
+     800
+    ]
+   },
+   {
+    "name": "dynamics_param_norm",
+    "loss": "dynamics_param_norm",
+    "steps": [
+     780,
+     800
+    ]
+   },
+   {
+    "name": "actor_update_rms",
+    "loss": "actor_update_rms",
+    "steps": [
+     400,
+     800
+    ]
+   },
+   {
+    "name": "actor_drift_rms",
+    "loss": "actor_drift_rms",
+    "steps": [
+     799,
+     800
+    ]
+   },
+   {
+    "name": "actor_param_norm",
+    "loss": "actor_param_norm",
+    "steps": [
+     780,
+     800
+    ]
+   },
+   {
+    "name": "critic_update_rms",
+    "loss": "critic_update_rms",
+    "steps": [
+     400,
+     800
+    ]
+   },
+   {
+    "name": "critic_drift_rms",
+    "loss": "critic_drift_rms",
+    "steps": [
+     799,
+     800
+    ]
+   },
+   {
+    "name": "critic_param_norm",
+    "loss": "critic_param_norm",
+    "steps": [
+     780,
+     800
+    ]
+   },
+   {
+    "name": "wm_step1_rms",
+    "loss": "wm_step1_rms",
+    "steps": [
+     100,
+     102
+    ]
+   },
+   {
+    "name": "wm_first_steps_rms",
+    "loss": "wm_first_steps_rms",
+    "steps": [
+     100,
+     102
+    ]
+   },
+   {
+    "name": "actor_step1_rms",
+    "loss": "actor_step1_rms",
+    "steps": [
+     100,
+     102
+    ]
+   },
+   {
+    "name": "actor_first_steps_rms",
+    "loss": "actor_first_steps_rms",
+    "steps": [
+     100,
+     102
+    ]
+   },
+   {
+    "name": "critic_step1_rms",
+    "loss": "critic_step1_rms",
+    "steps": [
+     100,
+     102
+    ]
+   },
+   {
+    "name": "critic_first_steps_rms",
+    "loss": "critic_first_steps_rms",
+    "steps": [
+     100,
+     102
+    ]
+   },
+   {
+    "name": "Loss_state",
+    "loss": "last/Loss/state",
+    "steps": [
+     400,
+     800
+    ]
+   },
+   {
+    "name": "Policy_reward",
+    "loss": "last/Policy/reward",
+    "steps": [
+     400,
+     800
+    ]
+   },
+   {
+    "name": "Policy_grad_norm",
+    "loss": "last/Policy/grad_norm",
+    "steps": [
+     400,
+     800
+    ]
+   },
+   {
+    "name": "Policy_value_function",
+    "loss": "last/Policy/value_function",
+    "steps": [
+     400,
+     800
+    ]
+   }
+  ]
+ },
+ "k": 3.0,
+ "reference_seeds": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "reference_values": {
+  "0": {
+   "dynamics_early_update_rms": 0.0001047295430410553,
+   "dynamics_update_rms": 7.691508761128405e-05,
+   "dynamics_drift_rms": 0.010547194368393794,
+   "dynamics_param_norm": 92.07638973132062,
+   "actor_update_rms": 1.3363781549940302e-05,
+   "actor_drift_rms": 0.0034348658555850174,
+   "actor_param_norm": 125.19913775788311,
+   "critic_update_rms": 0.0005891623070129207,
+   "critic_drift_rms": 0.03519080837252694,
+   "critic_param_norm": 26.56713748717262,
+   "wm_step1_rms": 4.03104098272524e-05,
+   "wm_first_steps_rms": 2.8315138557166936e-05,
+   "actor_step1_rms": 7.935279146328638e-05,
+   "actor_first_steps_rms": 5.381630418271343e-05,
+   "critic_step1_rms": 0.00018515357287627552,
+   "critic_first_steps_rms": 0.00012429139390134745,
+   "Loss_state": 0.048504441138356925,
+   "Policy_reward": 2.3552980384230615,
+   "Policy_grad_norm": 4.397803167104721,
+   "Policy_value_function": 0.035305866510607305
+  },
+  "1": {
+   "dynamics_early_update_rms": 0.0001052840478193271,
+   "dynamics_update_rms": 7.588576055832365e-05,
+   "dynamics_drift_rms": 0.010424335223509613,
+   "dynamics_param_norm": 91.94620137924896,
+   "actor_update_rms": 1.3312742197193499e-05,
+   "actor_drift_rms": 0.003392762124940862,
+   "actor_param_norm": 125.1633045403235,
+   "critic_update_rms": 0.0005709008663035877,
+   "critic_drift_rms": 0.03478155927031758,
+   "critic_param_norm": 26.503278499084626,
+   "wm_step1_rms": 4.031811451658133e-05,
+   "wm_first_steps_rms": 2.8094224078396313e-05,
+   "actor_step1_rms": 7.938604501704386e-05,
+   "actor_first_steps_rms": 5.4084763428523075e-05,
+   "critic_step1_rms": 0.00018519909547507155,
+   "critic_first_steps_rms": 0.00012468337204721796,
+   "Loss_state": 0.039888730701059104,
+   "Policy_reward": 2.2499374440312385,
+   "Policy_grad_norm": 4.771790905296802,
+   "Policy_value_function": 0.0384424130897969
+  },
+  "2": {
+   "dynamics_early_update_rms": 0.0001062108062975281,
+   "dynamics_update_rms": 7.722804396301498e-05,
+   "dynamics_drift_rms": 0.010598402522445984,
+   "dynamics_param_norm": 92.11784389286856,
+   "actor_update_rms": 1.3440454341078427e-05,
+   "actor_drift_rms": 0.003420995205888913,
+   "actor_param_norm": 125.10722126785618,
+   "critic_update_rms": 0.0005839316809693623,
+   "critic_drift_rms": 0.03444188698086149,
+   "critic_param_norm": 26.2519386526914,
+   "wm_step1_rms": 4.0313214337570064e-05,
+   "wm_first_steps_rms": 2.7819083078096203e-05,
+   "actor_step1_rms": 7.940795429402293e-05,
+   "actor_first_steps_rms": 5.40051114249057e-05,
+   "critic_step1_rms": 0.00018516405062994352,
+   "critic_first_steps_rms": 0.00012329923894494708,
+   "Loss_state": 0.04486382760107517,
+   "Policy_reward": 2.4921258929371835,
+   "Policy_grad_norm": 4.270106106996536,
+   "Policy_value_function": 0.03759324590209871
+  },
+  "3": {
+   "dynamics_early_update_rms": 0.00010543467409637169,
+   "dynamics_update_rms": 7.802727634483859e-05,
+   "dynamics_drift_rms": 0.010586293095385647,
+   "dynamics_param_norm": 92.13327688414897,
+   "actor_update_rms": 1.3257614854487703e-05,
+   "actor_drift_rms": 0.003420139315391737,
+   "actor_param_norm": 125.15557772199034,
+   "critic_update_rms": 0.0005592730709693069,
+   "critic_drift_rms": 0.03452868488851177,
+   "critic_param_norm": 26.386863016791853,
+   "wm_step1_rms": 4.031358930243633e-05,
+   "wm_first_steps_rms": 2.8409777066541408e-05,
+   "actor_step1_rms": 7.940556066553063e-05,
+   "actor_first_steps_rms": 5.4065374926604227e-05,
+   "critic_step1_rms": 0.00018519387230621893,
+   "critic_first_steps_rms": 0.00012447711274936042,
+   "Loss_state": 0.04698419275693595,
+   "Policy_reward": 2.123793859779835,
+   "Policy_grad_norm": 4.081373849511147,
+   "Policy_value_function": 0.031435498732607814
+  },
+  "4": {
+   "dynamics_early_update_rms": 0.0001052973725349389,
+   "dynamics_update_rms": 7.772852109137666e-05,
+   "dynamics_drift_rms": 0.010659721685251337,
+   "dynamics_param_norm": 92.16805270954197,
+   "actor_update_rms": 1.355467856484999e-05,
+   "actor_drift_rms": 0.0034157612690442697,
+   "actor_param_norm": 125.10421204357309,
+   "critic_update_rms": 0.0005712218850359997,
+   "critic_drift_rms": 0.034573057079609705,
+   "critic_param_norm": 26.432028283514683,
+   "wm_step1_rms": 4.033029252959011e-05,
+   "wm_first_steps_rms": 2.8218793100649648e-05,
+   "actor_step1_rms": 7.93904771599251e-05,
+   "actor_first_steps_rms": 5.384812492297038e-05,
+   "critic_step1_rms": 0.00018519388327762305,
+   "critic_first_steps_rms": 0.00012486927915381448,
+   "Loss_state": 0.05138759107328952,
+   "Policy_reward": 2.146408006846905,
+   "Policy_grad_norm": 4.087343398034573,
+   "Policy_value_function": 0.030755861995276065
+  },
+  "5": {
+   "dynamics_early_update_rms": 0.00010459464906269592,
+   "dynamics_update_rms": 7.694878444054215e-05,
+   "dynamics_drift_rms": 0.010548087906495028,
+   "dynamics_param_norm": 92.07630429380193,
+   "actor_update_rms": 1.3172174758162951e-05,
+   "actor_drift_rms": 0.003442855872954351,
+   "actor_param_norm": 125.13460489291904,
+   "critic_update_rms": 0.0005804194956555034,
+   "critic_drift_rms": 0.03464079578087908,
+   "critic_param_norm": 26.338784737486208,
+   "wm_step1_rms": 4.032692330602965e-05,
+   "wm_first_steps_rms": 2.860384232104024e-05,
+   "actor_step1_rms": 7.941476978570897e-05,
+   "actor_first_steps_rms": 5.3901414989732205e-05,
+   "critic_step1_rms": 0.00018518497575654836,
+   "critic_first_steps_rms": 0.0001244782322283543,
+   "Loss_state": 0.04887136950157583,
+   "Policy_reward": 2.423814665079117,
+   "Policy_grad_norm": 4.567386365234852,
+   "Policy_value_function": 0.031171756773255767
+  }
+ },
+ "endpoints": {
+  "dynamics_early_update_rms": {
+   "reference_mean": 0.0001052585154753195,
+   "sigma_seed": 5.76295391535906e-07,
+   "delta": 1.7288861746077179e-06
+  },
+  "dynamics_update_rms": {
+   "reference_mean": 7.712224566823002e-05,
+   "sigma_seed": 7.482970504528793e-07,
+   "delta": 2.244891151358638e-06
+  },
+  "dynamics_drift_rms": {
+   "reference_mean": 0.010560672466913569,
+   "sigma_seed": 7.850935687767711e-05,
+   "delta": 0.00023552807063303134
+  },
+  "dynamics_param_norm": {
+   "reference_mean": 92.08634481515516,
+   "sigma_seed": 0.07708578259673153,
+   "delta": 0.23125734779019458
+  },
+  "actor_update_rms": {
+   "reference_mean": 1.3350241044285478e-05,
+   "sigma_seed": 1.3550635472136111e-07,
+   "delta": 4.0651906416408337e-07
+  },
+  "actor_drift_rms": {
+   "reference_mean": 0.0034212299406341917,
+   "sigma_seed": 1.72926955006453e-05,
+   "delta": 5.18780865019359e-05
+  },
+  "actor_param_norm": {
+   "reference_mean": 125.14400970409088,
+   "sigma_seed": 0.0362516354244795,
+   "delta": 0.10875490627343849
+  },
+  "critic_update_rms": {
+   "reference_mean": 0.0005758182176577801,
+   "sigma_seed": 1.080845283740845e-05,
+   "delta": 3.242535851222535e-05
+  },
+  "critic_drift_rms": {
+   "reference_mean": 0.034692798728784426,
+   "sigma_seed": 0.000269378717031065,
+   "delta": 0.0008081361510931951
+  },
+  "critic_param_norm": {
+   "reference_mean": 26.413338446123564,
+   "sigma_seed": 0.1134916431511866,
+   "delta": 0.3404749294535598
+  },
+  "wm_step1_rms": {
+   "reference_mean": 4.031875730324332e-05,
+   "sigma_seed": 8.090380451941548e-09,
+   "delta": 2.4271141355824646e-08
+  },
+  "wm_first_steps_rms": {
+   "reference_mean": 2.8243476366981794e-05,
+   "sigma_seed": 2.7042565926944054e-07,
+   "delta": 8.112769778083216e-07
+  },
+  "actor_step1_rms": {
+   "reference_mean": 7.939293306425298e-05,
+   "sigma_seed": 2.2480039369893292e-08,
+   "delta": 6.744011810967988e-08
+  },
+  "actor_first_steps_rms": {
+   "reference_mean": 5.395351564590817e-05,
+   "sigma_seed": 1.1406074874108807e-07,
+   "delta": 3.421822462232642e-07
+  },
+  "critic_step1_rms": {
+   "reference_mean": 0.0001851815750536135,
+   "sigma_seed": 1.8506604815916978e-08,
+   "delta": 5.551981444775093e-08
+  },
+  "critic_first_steps_rms": {
+   "reference_mean": 0.00012434977150417361,
+   "sigma_seed": 5.515291602888092e-07,
+   "delta": 1.6545874808664276e-06
+  },
+  "Loss_state": {
+   "reference_mean": 0.046750025462048754,
+   "sigma_seed": 0.003994371845179062,
+   "delta": 0.011983115535537187
+  },
+  "Policy_reward": {
+   "reference_mean": 2.298562984516223,
+   "sigma_seed": 0.1499555112159289,
+   "delta": 0.4498665336477867
+  },
+  "Policy_grad_norm": {
+   "reference_mean": 4.362633965363105,
+   "sigma_seed": 0.273504432616115,
+   "delta": 0.820513297848345
+  },
+  "Policy_value_function": {
+   "reference_mean": 0.03411744050060709,
+   "sigma_seed": 0.003445839281903659,
+   "delta": 0.010337517845710976
+  }
+ }
+}

@@ -1,0 +1,172 @@
+{
+ "inputs": {
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/SHA256SUMS": {
+   "kind": "sha256",
+   "value": "38ac9f996929f2d5712c1a84e447255a56039e79f0a416efea2afc383962b1bb"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/dance1_subject1.npz": {
+   "kind": "sha256",
+   "value": "946e4756f6a256f6202cdba5568c2b62b6fa0f5b2309c3442b6709869ed1af9f"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/dance1_subject2.npz": {
+   "kind": "sha256",
+   "value": "734db595ae1420166d829a35b70807001aafcc334163d7132d845d41b500e140"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/dance1_subject3.npz": {
+   "kind": "sha256",
+   "value": "2e3096fbfdc99d79609a65a69d0cc0eb546093e6ec1fb1d802968bd31a801e87"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/dance2_subject1.npz": {
+   "kind": "sha256",
+   "value": "4a349227c2c4a638d9cea2d8615b8fba399ac34d7b3793f1aad73d935ff34652"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/dance2_subject2.npz": {
+   "kind": "sha256",
+   "value": "d6721831d2211f72f774c2fd4a7ca99f7c16f655bc6d2ef3523e5851d707f2ab"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/dance2_subject3.npz": {
+   "kind": "sha256",
+   "value": "b4199927c3823f47e287bb9f1780f27fc9ceebe40b002d401ee4fd3864517def"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/dance2_subject4.npz": {
+   "kind": "sha256",
+   "value": "94fdae5f924546b74e246c5dd035edde2e18e44553649536a94102d99227c87e"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/dance2_subject5.npz": {
+   "kind": "sha256",
+   "value": "caffc914fc6df243739d5d25adea63b86ec6e1cc162479f3fd4dc3cb23d661ae"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/fallAndGetUp1_subject1.npz": {
+   "kind": "sha256",
+   "value": "18c464528d2caf41299ebd95b502b8f0d7bd810752f0546eeba363c96b3eb572"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/fallAndGetUp1_subject4.npz": {
+   "kind": "sha256",
+   "value": "6995c9f7b87495beda05c08e8a00cc65710963c21ea322491dcb372000e0590a"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/fallAndGetUp1_subject5.npz": {
+   "kind": "sha256",
+   "value": "d29395f2a7b0859e4f1aae39afa94308639372dbae292966f5ccf05888586bcb"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/fallAndGetUp2_subject2.npz": {
+   "kind": "sha256",
+   "value": "f6dadb1af0623a40e0ff9598f76ca445a53b08edbe03fafdd7f754f443c34445"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/fallAndGetUp2_subject3.npz": {
+   "kind": "sha256",
+   "value": "d9ed1427065be3e2caee8c8260e9b907e78c4f573adf18d892a567743bc0d3c9"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/fallAndGetUp3_subject1.npz": {
+   "kind": "sha256",
+   "value": "76e2029ebc1314f07ccbaae1c5e0f8d37ad0f78e83386c9e1e8019df323cbc75"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/fight1_subject2.npz": {
+   "kind": "sha256",
+   "value": "a2cde169e115bf656ba7bd0eeef9b9d854bd0d4eb1b402092ebc22409953efe7"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/fight1_subject3.npz": {
+   "kind": "sha256",
+   "value": "427fd7412c3a78f41230f7cb666a259e0f6cd6300e750b451a87af34a0b8a415"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/fight1_subject5.npz": {
+   "kind": "sha256",
+   "value": "2db1a8d7721d2b73c29b1234570c2928d860660e2b63d56b1b33cb22dd0df231"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/fightAndSports1_subject1.npz": {
+   "kind": "sha256",
+   "value": "d7adf269b8fcc7a29233b0b5573a370c3285cc7c3d04a6891d0abbc7349a87ef"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/fightAndSports1_subject4.npz": {
+   "kind": "sha256",
+   "value": "59e1290dcff6fb0fc812c595d2fc58b3817fe85ec44c273a76d951c675daecf7"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/jumps1_subject1.npz": {
+   "kind": "sha256",
+   "value": "4de6cdec6aac4a0c8a5eb79b0e981dd96420d82d9bed1811af6e873c310e8cae"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/jumps1_subject2.npz": {
+   "kind": "sha256",
+   "value": "9ca2559b0f8c209974f261a5588fe72b2c6a3125650e6889c05220b60e82c561"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/jumps1_subject5.npz": {
+   "kind": "sha256",
+   "value": "7a1c2f41a25a652d1dd580f5560aeb05a955eeb4afabf1eed997625235ae7114"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/run1_subject2.npz": {
+   "kind": "sha256",
+   "value": "9aa63b590a41ce61d1161288265459994ca0d64b8cd487b76e32f62d7d275a23"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/run1_subject5.npz": {
+   "kind": "sha256",
+   "value": "4c3653a78c733489ef644761da3411fe4d9e7b09abc77e6cd6f9b9f030c6f599"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/run2_subject1.npz": {
+   "kind": "sha256",
+   "value": "e3ac507b84923fb6c90a9a1d66bcaec5d39316bf7055da2367c5ce0ff6dc0005"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/run2_subject4.npz": {
+   "kind": "sha256",
+   "value": "13317ece56e60f8f0b10c6f389e7aaaa48e6275719d26c9426c4f83c354a0b3d"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/sprint1_subject2.npz": {
+   "kind": "sha256",
+   "value": "7cb00217565e60a0d28ed1153ff76c75a44541d14ad8425a9f81f4618c195679"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/sprint1_subject4.npz": {
+   "kind": "sha256",
+   "value": "a69cfff9590d26eab72ed10eb5716da8f25de2dd57834897a0bec66afe8551e4"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/walk1_subject1.npz": {
+   "kind": "sha256",
+   "value": "c5ee2b4a737c3780bcf0ba4088db0d787403b7755e76079848827fe90d10d29b"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/walk1_subject2.npz": {
+   "kind": "sha256",
+   "value": "adb48cc701898facef8d1a0c0d3021a3439ab73d9d9add94460b1a3620a734b0"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/walk1_subject5.npz": {
+   "kind": "sha256",
+   "value": "786e0b359dbcfb94bd47ae16bdf337e595f61ffe1d118e4fc3c09b75340163b8"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/walk2_subject1.npz": {
+   "kind": "sha256",
+   "value": "697e0fa176ff750eaded416f63490bb6ee45cd540507a10635f2f9c23af60558"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/walk2_subject3.npz": {
+   "kind": "sha256",
+   "value": "5b0b563cc15b182184b8c339d23f136b569b463b33fafc411a9dab235b0e8165"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/walk2_subject4.npz": {
+   "kind": "sha256",
+   "value": "69e5cfed49666ab109f2216fd28e640c8ad9dd5b1c74a170c61edf1b025cd5a8"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/walk3_subject1.npz": {
+   "kind": "sha256",
+   "value": "5ce3e2de9c754336e2a136c790f533aeee036054de76d0aa50ed2514d27b19bc"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/walk3_subject2.npz": {
+   "kind": "sha256",
+   "value": "ffb4c8feb4e60c92570ceba6309ba73b4b92a23ca98fad1555123d6b9d65e257"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/walk3_subject3.npz": {
+   "kind": "sha256",
+   "value": "5bde6cd73d1d4d0d80e17c7f05578f9df7623b353af33e96881951e8a7bf3080"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/walk3_subject4.npz": {
+   "kind": "sha256",
+   "value": "939ff934128ee3f3e2ce277916b07a5b60796cdf54cd9595654eb421d21eefd3"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/walk3_subject5.npz": {
+   "kind": "sha256",
+   "value": "b0e66d5749f006055a2b5b48460c6f90c59d938c71ccd5c1f8d64e789a0718d4"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/walk4_subject1.npz": {
+   "kind": "sha256",
+   "value": "085e78bc5bc9834c0b960401b6aec6c1255524aa79f52597060031de1fa4b89a"
+  },
+  "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/fixture/update_state.pt": {
+   "kind": "stat",
+   "value": "2843105881:1794484964656750799"
+  }
+ }
+}

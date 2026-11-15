@@ -1,0 +1,26 @@
+[2026-11-15 10:42:58] train ref seed 0 on GPU 0, 20000 iterations
+[2026-11-15 11:12:06] train exit 0: [e2e] done 20000 iterations in 1729 s, 21 saves
+[2026-11-15 11:12:06] eval e2e/results/ref_s0/snap/it4000 with the reference tree
+[2026-11-15 11:15:51] eval exit 0: 40 clips | failed 10 | mean norm return 0.7655 | step-weighted 0.7785
+[2026-11-15 11:15:51] eval e2e/results/ref_s0/snap/it8000 with the reference tree
+[2026-11-15 11:20:23] eval exit 0: 40 clips | failed 4 | mean norm return 0.8023 | step-weighted 0.8073
+[2026-11-15 11:20:23] eval e2e/results/ref_s0/snap/it12000 with the reference tree
+[2026-11-15 11:24:20] eval exit 0: 40 clips | failed 0 | mean norm return 0.8404 | step-weighted 0.8409
+[2026-11-15 11:24:20] eval e2e/results/ref_s0/snap/it16000 with the reference tree
+[2026-11-15 11:28:15] eval exit 0: 40 clips | failed 2 | mean norm return 0.8547 | step-weighted 0.8567
+[2026-11-15 11:28:15] eval e2e/results/ref_s0/snap/it20000 with the reference tree
+[2026-11-15 11:32:03] eval exit 0: 40 clips | failed 0 | mean norm return 0.8583 | step-weighted 0.8586
+[2026-11-15 11:32:03] DONE ref s0
+[2026-11-15 11:32:03] train opt seed 1 on GPU 0, 20000 iterations
+[2026-11-15 12:01:59] train exit 0: [e2e] done 20000 iterations in 1785 s, 21 saves
+[2026-11-15 12:01:59] eval e2e/results/opt_s1/snap/it4000 with the reference tree
+[2026-11-15 12:07:28] eval exit 0: 40 clips | failed 5 | mean norm return 0.7727 | step-weighted 0.7818
+[2026-11-15 12:07:28] eval e2e/results/opt_s1/snap/it8000 with the reference tree
+[2026-11-15 12:11:26] eval exit 0: 40 clips | failed 5 | mean norm return 0.8199 | step-weighted 0.8222
+[2026-11-15 12:11:26] eval e2e/results/opt_s1/snap/it12000 with the reference tree
+[2026-11-15 12:15:19] eval exit 0: 40 clips | failed 1 | mean norm return 0.8410 | step-weighted 0.8425
+[2026-11-15 12:15:20] eval e2e/results/opt_s1/snap/it16000 with the reference tree
+[2026-11-15 12:19:07] eval exit 0: 40 clips | failed 0 | mean norm return 0.8584 | step-weighted 0.8584
+[2026-11-15 12:19:07] eval e2e/results/opt_s1/snap/it20000 with the reference tree
+[2026-11-15 12:23:02] eval exit 0: 40 clips | failed 0 | mean norm return 0.8622 | step-weighted 0.8622
+[2026-11-15 12:23:02] DONE opt s1

@@ -1,0 +1,510 @@
+{
+ "status": "PASS",
+ "mode": "final",
+ "final": true,
+ "n1": false,
+ "quick": false,
+ "skip_timing": false,
+ "tree": "/mnt/pfs/wenbo/rba-work/supermimic_official/ws/cand_c3",
+ "config": null,
+ "environment": {},
+ "correctness": {
+  "stage": "statistical",
+  "measured_tier": "N1",
+  "numerics": {
+   "status": "INCORRECT",
+   "measured_tier": "N1",
+   "report": "/mnt/pfs/wenbo/rba-work/supermimic_official/ws/runs/clawo-final/1113_160623/compare.json",
+   "errors": 0,
+   "exact_failures": [],
+   "bitwise": false,
+   "summary": {
+    "thresholds_sha256": "f32271e9f352ccd4696d3dd91a3000229a33e78d98d58c2475bb5db5c6700c30",
+    "errors": 0,
+    "exact_failures": 0,
+    "violations": 58,
+    "arbitration": 0,
+    "unresolved": 58,
+    "excluded": 0,
+    "dtype_changes": 0,
+    "precision_mode_changes": 0,
+    "checked": 195,
+    "bitwise_identical": 125,
+    "closest": 10,
+    "traced_only_cases": 0,
+    "bitwise_trusted": true
+   }
+  },
+  "trajectory": {
+   "seeds": [
+    0
+   ],
+   "sigma_k": 3.0,
+   "endpoints": {
+    "dynamics_early_update_rms": {
+     "state": "within",
+     "mean": 2.7797311520683413e-07,
+     "sigma_seed": 5.76295391535906e-07,
+     "bound": 1.7288861746077179e-06,
+     "mean_in_sigma": 0.482344851771238,
+     "diffs": [
+      2.7797311520683413e-07
+     ]
+    },
+    "dynamics_update_rms": {
+     "state": "within",
+     "mean": 6.191888053293237e-07,
+     "sigma_seed": 7.482970504528793e-07,
+     "bound": 2.244891151358638e-06,
+     "mean_in_sigma": 0.8274639128332558,
+     "diffs": [
+      6.191888053293237e-07
+     ]
+    },
+    "dynamics_drift_rms": {
+     "state": "within",
+     "mean": 5.92488592490361e-05,
+     "sigma_seed": 7.850935687767711e-05,
+     "bound": 0.00023552807063303134,
+     "mean_in_sigma": 0.754672584330933,
+     "diffs": [
+      5.92488592490361e-05
+     ]
+    },
+    "dynamics_param_norm": {
+     "state": "within",
+     "mean": 0.056920314774018266,
+     "sigma_seed": 0.07708578259673153,
+     "bound": 0.23125734779019458,
+     "mean_in_sigma": 0.738402243015325,
+     "diffs": [
+      0.056920314774018266
+     ]
+    },
+    "actor_update_rms": {
+     "state": "within",
+     "mean": 6.094207066237135e-08,
+     "sigma_seed": 1.3550635472136111e-07,
+     "bound": 4.0651906416408337e-07,
+     "mean_in_sigma": 0.449735887203853,
+     "diffs": [
+      6.094207066237135e-08
+     ]
+    },
+    "actor_drift_rms": {
+     "state": "within",
+     "mean": 2.6528311392531607e-05,
+     "sigma_seed": 1.72926955006453e-05,
+     "bound": 5.18780865019359e-05,
+     "mean_in_sigma": 1.5340761300944477,
+     "diffs": [
+      2.6528311392531607e-05
+     ]
+    },
+    "actor_param_norm": {
+     "state": "within",
+     "mean": -0.004984738260986887,
+     "sigma_seed": 0.0362516354244795,
+     "bound": 0.10875490627343849,
+     "mean_in_sigma": -0.13750381748628265,
+     "diffs": [
+      -0.004984738260986887
+     ]
+    },
+    "critic_update_rms": {
+     "state": "within",
+     "mean": 6.2364736573033335e-06,
+     "sigma_seed": 1.080845283740845e-05,
+     "bound": 3.242535851222535e-05,
+     "mean_in_sigma": 0.5769996641627255,
+     "diffs": [
+      6.2364736573033335e-06
+     ]
+    },
+    "critic_drift_rms": {
+     "state": "within",
+     "mean": 0.00015713987716354377,
+     "sigma_seed": 0.000269378717031065,
+     "bound": 0.0008081361510931951,
+     "mean_in_sigma": 0.583341842649812,
+     "diffs": [
+      0.00015713987716354377
+     ]
+    },
+    "critic_param_norm": {
+     "state": "within",
+     "mean": 0.09476531508358121,
+     "sigma_seed": 0.1134916431511866,
+     "bound": 0.3404749294535598,
+     "mean_in_sigma": 0.8349981765383437,
+     "diffs": [
+      0.09476531508358121
+     ]
+    },
+    "wm_step1_rms": {
+     "state": "within",
+     "mean": -3.26740849681444e-11,
+     "sigma_seed": 8.090380451941548e-09,
+     "bound": 2.4271141355824646e-08,
+     "mean_in_sigma": -0.004038633926084798,
+     "diffs": [
+      -3.26740849681444e-11
+     ]
+    },
+    "wm_first_steps_rms": {
+     "state": "within",
+     "mean": 1.075058104333098e-10,
+     "sigma_seed": 2.7042565926944054e-07,
+     "bound": 8.112769778083216e-07,
+     "mean_in_sigma": 0.00039754293554738313,
+     "diffs": [
+      1.075058104333098e-10
+     ]
+    },
+    "actor_step1_rms": {
+     "state": "within",
+     "mean": -8.272815432236414e-10,
+     "sigma_seed": 2.2480039369893292e-08,
+     "bound": 6.744011810967988e-08,
+     "mean_in_sigma": -0.036800715942321253,
+     "diffs": [
+      -8.272815432236414e-10
+     ]
+    },
+    "actor_first_steps_rms": {
+     "state": "within",
+     "mean": -6.838379995865182e-09,
+     "sigma_seed": 1.1406074874108807e-07,
+     "bound": 3.421822462232642e-07,
+     "mean_in_sigma": -0.05995384101315999,
+     "diffs": [
+      -6.838379995865182e-09
+     ]
+    },
+    "critic_step1_rms": {
+     "state": "within",
+     "mean": 2.6625760353015532e-11,
+     "sigma_seed": 1.8506604815916978e-08,
+     "bound": 5.551981444775093e-08,
+     "mean_in_sigma": 0.0014387166429422815,
+     "diffs": [
+      2.6625760353015532e-11
+     ]
+    },
+    "critic_first_steps_rms": {
+     "state": "within",
+     "mean": -1.3120920050598787e-09,
+     "sigma_seed": 5.515291602888092e-07,
+     "bound": 1.6545874808664276e-06,
+     "mean_in_sigma": -0.0023790074932262865,
+     "diffs": [
+      -1.3120920050598787e-09
+     ]
+    },
+    "Loss_state": {
+     "state": "within",
+     "mean": 0.0034961976017802918,
+     "sigma_seed": 0.003994371845179062,
+     "bound": 0.011983115535537187,
+     "mean_in_sigma": 0.8752809546261865,
+     "diffs": [
+      0.0034961976017802918
+     ]
+    },
+    "Policy_reward": {
+     "state": "within",
+     "mean": -0.16790502846240996,
+     "sigma_seed": 0.1499555112159289,
+     "bound": 0.4498665336477867,
+     "mean_in_sigma": -1.1196989500481553,
+     "diffs": [
+      -0.16790502846240996
+     ]
+    },
+    "Policy_grad_norm": {
+     "state": "within",
+     "mean": -0.1621334955096243,
+     "sigma_seed": 0.273504432616115,
+     "bound": 0.820513297848345,
+     "mean_in_sigma": -0.5928002480939365,
+     "diffs": [
+      -0.1621334955096243
+     ]
+    },
+    "Policy_value_function": {
+     "state": "within",
+     "mean": -7.86337768659412e-06,
+     "sigma_seed": 0.003445839281903659,
+     "bound": 0.010337517845710976,
+     "mean_in_sigma": -0.002281992003483687,
+     "diffs": [
+      -7.86337768659412e-06
+     ]
+    }
+   },
+   "verdict": "equivalent",
+   "report": "/mnt/pfs/wenbo/rba-work/supermimic_official/ws/runs/clawo-final/1113_160623/traj_report.json"
+  },
+  "passed": true,
+  "verdict": "equivalent"
+ },
+ "performance": {
+  "mode": "final (reference -> candidate -> reference)",
+  "reference_s_per_iteration": 0.0852,
+  "candidate_s_per_iteration": 0.0617,
+  "speedup": 1.3821,
+  "reference_spread": 0.0142,
+  "frozen_reference_s_per_iteration": 0.084,
+  "runs": {
+   "ref_a": {
+    "status": "ok",
+    "problems": [],
+    "rng_first_divergence_from_frozen_reference": null,
+    "window_s": [
+     25.803,
+     25.702
+    ],
+    "total_s": 51.505,
+    "iterations_timed": 600,
+    "s_per_iteration": 0.0858,
+    "s_per_update": 0.2146,
+    "peak_memory_allocated_gib": 15.11,
+    "peak_memory_reserved_gib": 16.52,
+    "startup_to_second_iteration_s": 287.3,
+    "process_wall_s": 624.7,
+    "math_flags_at_end": {
+     "cuda.matmul.fp32_precision": "tf32",
+     "cudnn.fp32_precision": "tf32",
+     "cudnn.conv.fp32_precision": "tf32",
+     "cudnn.rnn.fp32_precision": "tf32"
+    },
+    "window_ratio": 1.0039,
+    "window_ratio_vs_frozen": 0.0076,
+    "run_status": "ok",
+    "wall_s": 624.7,
+    "fingerprint": {
+     "argv": [
+      "python",
+      "timing.py",
+      "--warmup",
+      "300",
+      "--window",
+      "300",
+      "--repeats",
+      "2",
+      "--",
+      "SuperMimic-GenCoord-G1",
+      "--motion-file",
+      "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/*.npz",
+      "--env.seed",
+      "0"
+     ],
+     "candidate_environment": {},
+     "math_mode": "default",
+     "gpus": [
+      [
+       0,
+       "GPU-116b25a9-a6a8-2af7-c254-d8d0642ece90"
+      ]
+     ],
+     "compile_cache": "cold (fresh per run)",
+     "instrumentation": "none",
+     "timing_plan": [
+      300,
+      300,
+      2
+     ],
+     "versions": {
+      "python": "3.13.12",
+      "torch": "2.14.0+cu130",
+      "triton": "3.8.0",
+      "warp-lang": "1.18.0",
+      "mujoco": "3.16.0",
+      "mujoco-warp": "3.16.0",
+      "mjlab": null,
+      "numpy": "2.5.1"
+     }
+    },
+    "log": "/mnt/pfs/wenbo/rba-work/supermimic_official/ws/runs/clawo-final/1113_160623/timing_ref_a.log"
+   },
+   "cand": {
+    "status": "ok",
+    "problems": [],
+    "rng_first_divergence_from_frozen_reference": null,
+    "window_s": [
+     18.461,
+     18.542
+    ],
+    "total_s": 37.004,
+    "iterations_timed": 600,
+    "s_per_iteration": 0.0617,
+    "s_per_update": 0.1542,
+    "peak_memory_allocated_gib": 15.18,
+    "peak_memory_reserved_gib": 16.92,
+    "startup_to_second_iteration_s": 294.3,
+    "process_wall_s": 631.0,
+    "math_flags_at_end": {
+     "cuda.matmul.fp32_precision": "tf32",
+     "cudnn.fp32_precision": "tf32",
+     "cudnn.conv.fp32_precision": "tf32",
+     "cudnn.rnn.fp32_precision": "tf32"
+    },
+    "window_ratio": 0.9956,
+    "window_ratio_vs_frozen": -0.0007,
+    "run_status": "ok",
+    "wall_s": 631.0,
+    "fingerprint": {
+     "argv": [
+      "python",
+      "timing.py",
+      "--warmup",
+      "300",
+      "--window",
+      "300",
+      "--repeats",
+      "2",
+      "--",
+      "SuperMimic-GenCoord-G1",
+      "--motion-file",
+      "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/*.npz",
+      "--env.seed",
+      "0"
+     ],
+     "candidate_environment": {},
+     "math_mode": "default",
+     "gpus": [
+      [
+       0,
+       "GPU-116b25a9-a6a8-2af7-c254-d8d0642ece90"
+      ]
+     ],
+     "compile_cache": "cold (fresh per run)",
+     "instrumentation": "none",
+     "timing_plan": [
+      300,
+      300,
+      2
+     ],
+     "versions": {
+      "python": "3.13.12",
+      "torch": "2.14.0+cu130",
+      "triton": "3.8.0",
+      "warp-lang": "1.18.0",
+      "mujoco": "3.16.0",
+      "mujoco-warp": "3.16.0",
+      "mjlab": null,
+      "numpy": "2.5.1"
+     }
+    },
+    "log": "/mnt/pfs/wenbo/rba-work/supermimic_official/ws/runs/clawo-final/1113_160623/timing_cand.log"
+   },
+   "ref_b": {
+    "status": "ok",
+    "problems": [],
+    "rng_first_divergence_from_frozen_reference": null,
+    "window_s": [
+     25.34,
+     25.441
+    ],
+    "total_s": 50.781,
+    "iterations_timed": 600,
+    "s_per_iteration": 0.0846,
+    "s_per_update": 0.2116,
+    "peak_memory_allocated_gib": 15.11,
+    "peak_memory_reserved_gib": 16.64,
+    "startup_to_second_iteration_s": 280.9,
+    "process_wall_s": 614.5,
+    "math_flags_at_end": {
+     "cuda.matmul.fp32_precision": "tf32",
+     "cudnn.fp32_precision": "tf32",
+     "cudnn.conv.fp32_precision": "tf32",
+     "cudnn.rnn.fp32_precision": "tf32"
+    },
+    "window_ratio": 0.996,
+    "window_ratio_vs_frozen": -0.0003,
+    "run_status": "ok",
+    "wall_s": 614.5,
+    "fingerprint": {
+     "argv": [
+      "python",
+      "timing.py",
+      "--warmup",
+      "300",
+      "--window",
+      "300",
+      "--repeats",
+      "2",
+      "--",
+      "SuperMimic-GenCoord-G1",
+      "--motion-file",
+      "/mnt/pfs/wenbo/rba-work/supermimic_official/assets/data/lafan1/*.npz",
+      "--env.seed",
+      "0"
+     ],
+     "candidate_environment": {},
+     "math_mode": "default",
+     "gpus": [
+      [
+       0,
+       "GPU-116b25a9-a6a8-2af7-c254-d8d0642ece90"
+      ]
+     ],
+     "compile_cache": "cold (fresh per run)",
+     "instrumentation": "none",
+     "timing_plan": [
+      300,
+      300,
+      2
+     ],
+     "versions": {
+      "python": "3.13.12",
+      "torch": "2.14.0+cu130",
+      "triton": "3.8.0",
+      "warp-lang": "1.18.0",
+      "mujoco": "3.16.0",
+      "mujoco-warp": "3.16.0",
+      "mjlab": null,
+      "numpy": "2.5.1"
+     }
+    },
+    "log": "/mnt/pfs/wenbo/rba-work/supermimic_official/ws/runs/clawo-final/1113_160623/timing_ref_b.log"
+   }
+  },
+  "fingerprint_diffs": {
+   "cand": [],
+   "ref_b": []
+  },
+  "problems": [],
+  "benefit": {
+   "speedup": 1.3821,
+   "speedup_bar": 1.0284,
+   "peak_memory_allocated_gib": 15.18,
+   "reference_peak_memory_allocated_gib": 15.11,
+   "passed": true
+  }
+ },
+ "source_digest": "987b92e8fff6be51eb43d8f4b002929626e02225064c764e1bb05e97ff6321ce",
+ "inputs": [
+  {
+   "when": "start",
+   "ok": true,
+   "mismatches": {},
+   "checked": 42,
+   "seconds": 0.2
+  },
+  {
+   "when": "end",
+   "ok": true,
+   "mismatches": {},
+   "checked": 42,
+   "seconds": 0.3
+  }
+ ],
+ "cost": {
+  "gpu_hours": 0.845,
+  "gpu_runs": 5,
+  "method": "GPU lock hold time x 1 card (startup, warmup and failed runs included)"
+ },
+ "evaluator_sha256": "6f78985e6467ca1cb370adf92a2b824476757728604c2850ed82dd1824b805ea",
+ "finished": "2026-11-13T16:57:17"
+}

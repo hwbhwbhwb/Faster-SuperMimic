@@ -1,0 +1,845 @@
+{
+ "status": "INCORRECT",
+ "thresholds_sha256": "f32271e9f352ccd4696d3dd91a3000229a33e78d98d58c2475bb5db5c6700c30",
+ "errors": [],
+ "exact_failures": [],
+ "violations": [
+  {
+   "where": "update r0 s0",
+   "tensor": "loss/delta/actor",
+   "rel_err": 0.029444705601859376,
+   "gate": 0.009359227818004214
+  },
+  {
+   "where": "update r0 s0",
+   "tensor": "loss/delta/critic",
+   "rel_err": 0.008494748366586318,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s0",
+   "tensor": "loss/delta/dynamics",
+   "rel_err": 0.016681278952640044,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s0",
+   "tensor": "loss/metric/Loss/joint_pos",
+   "rel_err": 1.6809506472889955e-05,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s0",
+   "tensor": "loss/metric/Loss/joint_vel",
+   "rel_err": 1.5010655128346463e-05,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s0",
+   "tensor": "loss/metric/Loss/root_ori",
+   "rel_err": 0.00011892489737038848,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s0",
+   "tensor": "loss/metric/Loss/root_pos",
+   "rel_err": 0.0010979915041390864,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s0",
+   "tensor": "loss/metric/Loss/state",
+   "rel_err": 0.00012650388228142812,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s0",
+   "tensor": "loss/metric/Policy/grad_norm",
+   "rel_err": 0.00434547031798818,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s0",
+   "tensor": "loss/metric/Policy/reward",
+   "rel_err": 0.0001353595644941372,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s0",
+   "tensor": "loss/metric/Policy/value_function",
+   "rel_err": 0.0005625891471289307,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s1",
+   "tensor": "loss/delta/actor",
+   "rel_err": 0.04296223092056111,
+   "gate": 0.03255298024976067
+  },
+  {
+   "where": "update r0 s1",
+   "tensor": "loss/delta/critic",
+   "rel_err": 0.030553416867440574,
+   "gate": 0.00398670675723173
+  },
+  {
+   "where": "update r0 s1",
+   "tensor": "loss/delta/dynamics",
+   "rel_err": 0.02165051288321577,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s1",
+   "tensor": "loss/metric/Loss/joint_pos",
+   "rel_err": 2.0011199985751187e-05,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s1",
+   "tensor": "loss/metric/Loss/joint_vel",
+   "rel_err": 2.1747813153117117e-05,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s1",
+   "tensor": "loss/metric/Loss/root_ori",
+   "rel_err": 2.8404206812524762e-05,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s1",
+   "tensor": "loss/metric/Loss/root_pos",
+   "rel_err": 0.0021657523013588766,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s1",
+   "tensor": "loss/metric/Loss/state",
+   "rel_err": 0.0003238153979049497,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s1",
+   "tensor": "loss/metric/Policy/reward",
+   "rel_err": 0.00018064232409472806,
+   "gate": 6.15534658533858e-06
+  },
+  {
+   "where": "update r0 s1",
+   "tensor": "loss/metric/Policy/value_function",
+   "rel_err": 0.0017886738563243566,
+   "gate": 0.00019067332464545753
+  },
+  {
+   "where": "update r0 s1",
+   "tensor": "loss/optim/actor",
+   "rel_err": 3.7295924603794458e-06,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s2",
+   "tensor": "loss/delta/actor",
+   "rel_err": 0.0564258416895791,
+   "gate": 0.034128525750205
+  },
+  {
+   "where": "update r0 s2",
+   "tensor": "loss/delta/critic",
+   "rel_err": 0.05027444253007159,
+   "gate": 0.004717679039600992
+  },
+  {
+   "where": "update r0 s2",
+   "tensor": "loss/delta/dynamics",
+   "rel_err": 0.027872767197104843,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s2",
+   "tensor": "loss/metric/Loss/joint_pos",
+   "rel_err": 3.430410080270544e-05,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s2",
+   "tensor": "loss/metric/Loss/joint_vel",
+   "rel_err": 1.5325768747572167e-05,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s2",
+   "tensor": "loss/metric/Loss/root_ori",
+   "rel_err": 0.0007490553991566311,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s2",
+   "tensor": "loss/metric/Loss/root_pos",
+   "rel_err": 0.0015146235021957519,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s2",
+   "tensor": "loss/metric/Loss/state",
+   "rel_err": 0.00044563465207520176,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s2",
+   "tensor": "loss/metric/Policy/grad_norm",
+   "rel_err": 0.016666575575836656,
+   "gate": 0.0007418361608208547
+  },
+  {
+   "where": "update r0 s2",
+   "tensor": "loss/metric/Policy/reward",
+   "rel_err": 0.001652309363413092,
+   "gate": 2.010889898201656e-05
+  },
+  {
+   "where": "update r0 s2",
+   "tensor": "loss/metric/Policy/value_function",
+   "rel_err": 0.009064750427056864,
+   "gate": 0.00019067332464545753
+  },
+  {
+   "where": "update r0 s2",
+   "tensor": "loss/optim/actor",
+   "rel_err": 4.753775403880427e-06,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s3",
+   "tensor": "loss/delta/actor",
+   "rel_err": 0.05350046691132889,
+   "gate": 0.035424704745687964
+  },
+  {
+   "where": "update r0 s3",
+   "tensor": "loss/delta/critic",
+   "rel_err": 0.04252259567489369,
+   "gate": 0.005500010319010281
+  },
+  {
+   "where": "update r0 s3",
+   "tensor": "loss/delta/dynamics",
+   "rel_err": 0.03514438168883629,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s3",
+   "tensor": "loss/metric/Loss/joint_pos",
+   "rel_err": 7.404693016489715e-05,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s3",
+   "tensor": "loss/metric/Loss/joint_vel",
+   "rel_err": 2.4123927272956427e-05,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s3",
+   "tensor": "loss/metric/Loss/root_ori",
+   "rel_err": 0.0022288805655501023,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s3",
+   "tensor": "loss/metric/Loss/root_pos",
+   "rel_err": 0.0004776726225521257,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s3",
+   "tensor": "loss/metric/Loss/state",
+   "rel_err": 0.0007684041302047143,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s3",
+   "tensor": "loss/metric/Policy/grad_norm",
+   "rel_err": 0.0019721634855895094,
+   "gate": 0.0007418361608208547
+  },
+  {
+   "where": "update r0 s3",
+   "tensor": "loss/metric/Policy/reward",
+   "rel_err": 0.0007305222199601315,
+   "gate": 6.867227104978882e-05
+  },
+  {
+   "where": "update r0 s3",
+   "tensor": "loss/metric/Policy/value_function",
+   "rel_err": 0.004112873684793248,
+   "gate": 0.00019067332464545753
+  },
+  {
+   "where": "update r0 s3",
+   "tensor": "loss/optim/actor",
+   "rel_err": 4.967346416882239e-06,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s4",
+   "tensor": "loss/delta/actor",
+   "rel_err": 0.05808873357119942,
+   "gate": 0.03640503719613414
+  },
+  {
+   "where": "update r0 s4",
+   "tensor": "loss/delta/critic",
+   "rel_err": 0.05030322942499966,
+   "gate": 0.0057921130717845685
+  },
+  {
+   "where": "update r0 s4",
+   "tensor": "loss/delta/dynamics",
+   "rel_err": 0.03833943962378947,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s4",
+   "tensor": "loss/metric/Loss/joint_pos",
+   "rel_err": 0.00016761076137082804,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s4",
+   "tensor": "loss/metric/Loss/joint_vel",
+   "rel_err": 7.496459811767275e-05,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s4",
+   "tensor": "loss/metric/Loss/root_ori",
+   "rel_err": 0.0008444069947905606,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s4",
+   "tensor": "loss/metric/Loss/root_pos",
+   "rel_err": 0.003224820185411799,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s4",
+   "tensor": "loss/metric/Loss/state",
+   "rel_err": 0.0007612896838421992,
+   "gate": 1e-06
+  },
+  {
+   "where": "update r0 s4",
+   "tensor": "loss/metric/Policy/grad_norm",
+   "rel_err": 0.0076804989690413905,
+   "gate": 0.0007418361608208547
+  },
+  {
+   "where": "update r0 s4",
+   "tensor": "loss/metric/Policy/reward",
+   "rel_err": 0.0009378635086471586,
+   "gate": 6.867227104978882e-05
+  },
+  {
+   "where": "update r0 s4",
+   "tensor": "loss/metric/Policy/value_function",
+   "rel_err": 0.0007451131294697316,
+   "gate": 0.00035070514464963584
+  },
+  {
+   "where": "update r0 s4",
+   "tensor": "loss/optim/actor",
+   "rel_err": 4.657880100550403e-06,
+   "gate": 1e-06
+  }
+ ],
+ "arbitration": [],
+ "unresolved": [
+  {
+   "where": "update r0 s0",
+   "tensor": "loss/delta/actor",
+   "rel_err": 0.029444705601859376,
+   "gate": 0.009359227818004214,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s0",
+   "tensor": "loss/delta/critic",
+   "rel_err": 0.008494748366586318,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s0",
+   "tensor": "loss/delta/dynamics",
+   "rel_err": 0.016681278952640044,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s0",
+   "tensor": "loss/metric/Loss/joint_pos",
+   "rel_err": 1.6809506472889955e-05,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s0",
+   "tensor": "loss/metric/Loss/joint_vel",
+   "rel_err": 1.5010655128346463e-05,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s0",
+   "tensor": "loss/metric/Loss/root_ori",
+   "rel_err": 0.00011892489737038848,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s0",
+   "tensor": "loss/metric/Loss/root_pos",
+   "rel_err": 0.0010979915041390864,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s0",
+   "tensor": "loss/metric/Loss/state",
+   "rel_err": 0.00012650388228142812,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s0",
+   "tensor": "loss/metric/Policy/grad_norm",
+   "rel_err": 0.00434547031798818,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s0",
+   "tensor": "loss/metric/Policy/reward",
+   "rel_err": 0.0001353595644941372,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s0",
+   "tensor": "loss/metric/Policy/value_function",
+   "rel_err": 0.0005625891471289307,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s1",
+   "tensor": "loss/delta/actor",
+   "rel_err": 0.04296223092056111,
+   "gate": 0.03255298024976067,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s1",
+   "tensor": "loss/delta/critic",
+   "rel_err": 0.030553416867440574,
+   "gate": 0.00398670675723173,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s1",
+   "tensor": "loss/delta/dynamics",
+   "rel_err": 0.02165051288321577,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s1",
+   "tensor": "loss/metric/Loss/joint_pos",
+   "rel_err": 2.0011199985751187e-05,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s1",
+   "tensor": "loss/metric/Loss/joint_vel",
+   "rel_err": 2.1747813153117117e-05,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s1",
+   "tensor": "loss/metric/Loss/root_ori",
+   "rel_err": 2.8404206812524762e-05,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s1",
+   "tensor": "loss/metric/Loss/root_pos",
+   "rel_err": 0.0021657523013588766,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s1",
+   "tensor": "loss/metric/Loss/state",
+   "rel_err": 0.0003238153979049497,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s1",
+   "tensor": "loss/metric/Policy/reward",
+   "rel_err": 0.00018064232409472806,
+   "gate": 6.15534658533858e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s1",
+   "tensor": "loss/metric/Policy/value_function",
+   "rel_err": 0.0017886738563243566,
+   "gate": 0.00019067332464545753,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s1",
+   "tensor": "loss/optim/actor",
+   "rel_err": 3.7295924603794458e-06,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s2",
+   "tensor": "loss/delta/actor",
+   "rel_err": 0.0564258416895791,
+   "gate": 0.034128525750205,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s2",
+   "tensor": "loss/delta/critic",
+   "rel_err": 0.05027444253007159,
+   "gate": 0.004717679039600992,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s2",
+   "tensor": "loss/delta/dynamics",
+   "rel_err": 0.027872767197104843,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s2",
+   "tensor": "loss/metric/Loss/joint_pos",
+   "rel_err": 3.430410080270544e-05,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s2",
+   "tensor": "loss/metric/Loss/joint_vel",
+   "rel_err": 1.5325768747572167e-05,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s2",
+   "tensor": "loss/metric/Loss/root_ori",
+   "rel_err": 0.0007490553991566311,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s2",
+   "tensor": "loss/metric/Loss/root_pos",
+   "rel_err": 0.0015146235021957519,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s2",
+   "tensor": "loss/metric/Loss/state",
+   "rel_err": 0.00044563465207520176,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s2",
+   "tensor": "loss/metric/Policy/grad_norm",
+   "rel_err": 0.016666575575836656,
+   "gate": 0.0007418361608208547,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s2",
+   "tensor": "loss/metric/Policy/reward",
+   "rel_err": 0.001652309363413092,
+   "gate": 2.010889898201656e-05,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s2",
+   "tensor": "loss/metric/Policy/value_function",
+   "rel_err": 0.009064750427056864,
+   "gate": 0.00019067332464545753,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s2",
+   "tensor": "loss/optim/actor",
+   "rel_err": 4.753775403880427e-06,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s3",
+   "tensor": "loss/delta/actor",
+   "rel_err": 0.05350046691132889,
+   "gate": 0.035424704745687964,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s3",
+   "tensor": "loss/delta/critic",
+   "rel_err": 0.04252259567489369,
+   "gate": 0.005500010319010281,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s3",
+   "tensor": "loss/delta/dynamics",
+   "rel_err": 0.03514438168883629,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s3",
+   "tensor": "loss/metric/Loss/joint_pos",
+   "rel_err": 7.404693016489715e-05,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s3",
+   "tensor": "loss/metric/Loss/joint_vel",
+   "rel_err": 2.4123927272956427e-05,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s3",
+   "tensor": "loss/metric/Loss/root_ori",
+   "rel_err": 0.0022288805655501023,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s3",
+   "tensor": "loss/metric/Loss/root_pos",
+   "rel_err": 0.0004776726225521257,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s3",
+   "tensor": "loss/metric/Loss/state",
+   "rel_err": 0.0007684041302047143,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s3",
+   "tensor": "loss/metric/Policy/grad_norm",
+   "rel_err": 0.0019721634855895094,
+   "gate": 0.0007418361608208547,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s3",
+   "tensor": "loss/metric/Policy/reward",
+   "rel_err": 0.0007305222199601315,
+   "gate": 6.867227104978882e-05,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s3",
+   "tensor": "loss/metric/Policy/value_function",
+   "rel_err": 0.004112873684793248,
+   "gate": 0.00019067332464545753,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s3",
+   "tensor": "loss/optim/actor",
+   "rel_err": 4.967346416882239e-06,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s4",
+   "tensor": "loss/delta/actor",
+   "rel_err": 0.05808873357119942,
+   "gate": 0.03640503719613414,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s4",
+   "tensor": "loss/delta/critic",
+   "rel_err": 0.05030322942499966,
+   "gate": 0.0057921130717845685,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s4",
+   "tensor": "loss/delta/dynamics",
+   "rel_err": 0.03833943962378947,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s4",
+   "tensor": "loss/metric/Loss/joint_pos",
+   "rel_err": 0.00016761076137082804,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s4",
+   "tensor": "loss/metric/Loss/joint_vel",
+   "rel_err": 7.496459811767275e-05,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s4",
+   "tensor": "loss/metric/Loss/root_ori",
+   "rel_err": 0.0008444069947905606,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s4",
+   "tensor": "loss/metric/Loss/root_pos",
+   "rel_err": 0.003224820185411799,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s4",
+   "tensor": "loss/metric/Loss/state",
+   "rel_err": 0.0007612896838421992,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s4",
+   "tensor": "loss/metric/Policy/grad_norm",
+   "rel_err": 0.0076804989690413905,
+   "gate": 0.0007418361608208547,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s4",
+   "tensor": "loss/metric/Policy/reward",
+   "rel_err": 0.0009378635086471586,
+   "gate": 6.867227104978882e-05,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s4",
+   "tensor": "loss/metric/Policy/value_function",
+   "rel_err": 0.0007451131294697316,
+   "gate": 0.00035070514464963584,
+   "arbitration": "no fp64 reference"
+  },
+  {
+   "where": "update r0 s4",
+   "tensor": "loss/optim/actor",
+   "rel_err": 4.657880100550403e-06,
+   "gate": 1e-06,
+   "arbitration": "no fp64 reference"
+  }
+ ],
+ "excluded": {},
+ "dtype_changes": [],
+ "precision_mode_changes": [],
+ "checked": 195,
+ "bitwise_identical": 125,
+ "closest": [
+  {
+   "ratio": 38339.43962378947,
+   "where": "update r0 s4",
+   "tensor": "loss/delta/dynamics",
+   "rel_err": 0.03833943962378947,
+   "gate": 1e-06
+  },
+  {
+   "ratio": 35144.38168883629,
+   "where": "update r0 s3",
+   "tensor": "loss/delta/dynamics",
+   "rel_err": 0.03514438168883629,
+   "gate": 1e-06
+  },
+  {
+   "ratio": 27872.767197104844,
+   "where": "update r0 s2",
+   "tensor": "loss/delta/dynamics",
+   "rel_err": 0.027872767197104843,
+   "gate": 1e-06
+  },
+  {
+   "ratio": 21650.51288321577,
+   "where": "update r0 s1",
+   "tensor": "loss/delta/dynamics",
+   "rel_err": 0.02165051288321577,
+   "gate": 1e-06
+  },
+  {
+   "ratio": 16681.278952640045,
+   "where": "update r0 s0",
+   "tensor": "loss/delta/dynamics",
+   "rel_err": 0.016681278952640044,
+   "gate": 1e-06
+  },
+  {
+   "ratio": 8494.748366586318,
+   "where": "update r0 s0",
+   "tensor": "loss/delta/critic",
+   "rel_err": 0.008494748366586318,
+   "gate": 1e-06
+  },
+  {
+   "ratio": 4345.47031798818,
+   "where": "update r0 s0",
+   "tensor": "loss/metric/Policy/grad_norm",
+   "rel_err": 0.00434547031798818,
+   "gate": 1e-06
+  },
+  {
+   "ratio": 3224.8201854117992,
+   "where": "update r0 s4",
+   "tensor": "loss/metric/Loss/root_pos",
+   "rel_err": 0.003224820185411799,
+   "gate": 1e-06
+  },
+  {
+   "ratio": 2228.8805655501023,
+   "where": "update r0 s3",
+   "tensor": "loss/metric/Loss/root_ori",
+   "rel_err": 0.0022288805655501023,
+   "gate": 1e-06
+  },
+  {
+   "ratio": 2165.7523013588766,
+   "where": "update r0 s1",
+   "tensor": "loss/metric/Loss/root_pos",
+   "rel_err": 0.0021657523013588766,
+   "gate": 1e-06
+  }
+ ],
+ "traced_only_cases": [],
+ "bitwise_trusted": true,
+ "measured_tier": "N1"
+}
